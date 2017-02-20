@@ -18,7 +18,9 @@ Jekyll<br>
 2.gitpages第一次部署到线上需要等待10分钟左右<br>
 3._posts目录下的文件名不能带空格,否则不更新<br>
 4.Jekyll如果编译错误,可以在项目设置中看见错误提示;没有错误的情况下,部署也有大概1分钟延迟<br>
-
+5.本地调试<br>
+1)cmd命令: jekyll server -w<br>
+2)网址:[http://localhost:4000](http://localhost:4000)
 
 参考网址: <br>
 git pages: [https://pages.github.com](https://pages.github.com) <br>
