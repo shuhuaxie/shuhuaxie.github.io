@@ -1,0 +1,26 @@
+---
+layout: post
+title:  "javap"
+date:   2017-03-09 18:36:30 +0800
+
+---
+* 新建java文件 test2.java
+
+``` java
+  public class test2
+  {
+	public static void main(String [] args){
+		System.out.print("xxx");
+	}
+  }
+
+```
+
+* 编译java文件
+1. cd 到test2.java目录(如果不cd到文件夹，在java test2时，会出现 ‘错误: 找不到或无法加载主类 test2’)
+2. javac test2.java
+
+* javap 查看字节码
+效果如下图所示：
+
+  ![xx](https://image.ibb.co/hy6vGF/QQ_20170309190403.png)
