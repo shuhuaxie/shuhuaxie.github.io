@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "数据库学习"
+date:   2017-05-03 16:51:30 +0800
+
+---
+* 本地连接到数据库
+
+C:\Program Files\MySQL\MySQL Server 5.7\bin>mysql -u root -p
+Enter password: **** <br>
+
+* 创建数据库
+
+create database xiexie
+
+* 查询数据库版本
+
+select Version();
+
+<br>
+
