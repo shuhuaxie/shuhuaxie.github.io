@@ -8,9 +8,38 @@ date:   2017-05-02 16:51:30 +0800
 
 du -h -d 1 debug.14.log <br>
 
-* 文件按照时间排序
+* ls 命令
 
-ls -lht
+ls -lht 文件按照时间排序
+ls target/ibd-data-api*.jar ls特定文件
+ls wangxc/ibd*.yaml  | awk -f'/' '{print$2}' ls特定文件，并以‘/’进行分割打印
 
+* 当前目录
+
+pwd
+
+* log文件操作
+1. 如果你只想看文件的前5行，可以使用head命令，如： 
+head -5 /etc/passwd 
+2. 如果你想查看文件的后10行，可以使用tail命令，如： 
+tail -10 /etc/passwd 或 tail -n 10 /etc/passwd 
+tail -f /var/log/messages 
+3. 筛选文件内容
+grep 'decode.failure' debug.20170428.0.log |more
+
+* last
+该命令用来列出目前与过去登录系统的用户相关信息。指令英文原义：show listing of last logged in users
+last -n 5 //仅输出前五行
+
+* awk
+awk是一个强大的文本分析工具，相对于grep的查找，sed的编辑，awk在其对数据分析并生成报告时，显得尤为强大。简单来说awk就是把文件逐行的读入，以空格为默认分隔符将每行切片，切开的部分再进行各种分析处理。
+last -n 5 | awk  '{print $1}' //只是显示最近登录的5个帐号
+ls wangxc/ibd*.yaml  | awk -f'/' '{print$2}' ls特定文件，并以‘/’进行分割打印
+
+* 变量
+
+jarFile=`ls target/ibd-data-api*.jar | awk -F'/' '{print$2}'`  设置变量
+echo $jarFile  打印变量
+date 打印日期
 <br>
 

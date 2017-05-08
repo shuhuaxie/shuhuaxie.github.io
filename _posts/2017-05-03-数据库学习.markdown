@@ -17,5 +17,9 @@ create database xiexie
 
 select Version();
 
+* 显示时间
+
+SELECT *,FROM_UNIXTIME(createTime/1000, '%Y-%m-%d %H:%i:%s') 
+
 <br>
 
