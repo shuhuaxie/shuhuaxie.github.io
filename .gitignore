@@ -1,3 +1,8 @@
 _site
 .sass-cache
 .jekyll-metadata
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+git_blog.iml
