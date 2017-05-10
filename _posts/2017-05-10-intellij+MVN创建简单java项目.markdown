@@ -7,6 +7,7 @@ date:   2017-05-10 16:51:30 +0800
 * 使用intellij创建空项目
 * 创建mvn model
 * 修改iml文件
+
 ```xml
     <content url="file://$MODULE_DIR$" >
         <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
@@ -16,13 +17,20 @@ date:   2017-05-10 16:51:30 +0800
     </content>
     
 ```
+
 * 新建文件夹和文件com.test.hello.java
 * 新增代码
+
 ```java
+package com.test;
+
+public class hello {
 public static void main(String... args){
               System.out.println("xx");
     }
-
+}
 ```
+
+* 现在可以在IDE内run hello.main了，同时可以进行mvn compile和package任务了
 <br>
 
