@@ -33,6 +33,7 @@ public static void main(String... args){
 
 * 现在可以在IDE内run hello.main了，同时可以进行mvn compile和package任务了
 * 新增mvn内容可以使用java -jar运行jar包
+
 ```xml
     <build>
             <plugins>
