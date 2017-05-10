@@ -6,3 +6,4 @@ _site
 .idea/vcs.xml
 .idea/workspace.xml
 git_blog.iml
+.idea/
