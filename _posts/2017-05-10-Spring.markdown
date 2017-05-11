@@ -33,6 +33,29 @@ public class SampleController {
 ```
 * run SampleController.main 启动服务
 * http://localhost:8080/访问服务
+* 修改上面的文件为application文件
+
+```java
+
+@SpringBootApplication
+public class MainClass {
+    public static void main(String[] args) throws Exception {
+        SpringApplication.run(MainClass.class, args);
+    }
+}
+```
+* 新建一个RestController
+```java
+
+@RestController
+public class GreetingCont{
+    @RequestMapping("/greeting")
+        public Greet greeting(@RequestParam(value="name", defaultValue="World") String name) {
+            return new Greet(counter.incrementAndGet(),
+                    String.format(template, name));
+        }
+}
+```
 
 <br>
 
