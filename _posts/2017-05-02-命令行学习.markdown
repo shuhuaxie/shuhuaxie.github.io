@@ -41,5 +41,18 @@ ls wangxc/ibd*.yaml  | awk -f'/' '{print$2}' ls特定文件，并以‘/’进�
 jarFile=`ls target/ibd-data-api*.jar | awk -F'/' '{print$2}'`  设置变量
 echo $jarFile  打印变量
 date 打印日期
+
+
+* 更新进程的一系列操作
+```shell
+//查询java进程
+ps -ef | grep java
+// 杀死查询到的进程
+kill -9  $pid
+//运行新的jar
+java -jar $jar-name "--spring.profiles.active=local" &
+//查询历史执行操作
+history
+```
 <br>
 
