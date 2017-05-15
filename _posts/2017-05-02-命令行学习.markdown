@@ -75,5 +75,11 @@ find -atime -2 // 查找2个小时内修改过的文件  -amin -10 为10分钟�
 find . -name *ibd-data //查找当前目录以下的文件
 find . -size +1000c -print //查找当前目录以下大于1k的文件
 ```
+* 特殊字符
+```shell
+$ echo 'pwd' // 结果 pwd
+$ echo `pwd` // 结果 /home/zhangyc
+```
+
 <br>
 

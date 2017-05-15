@@ -21,5 +21,9 @@ select Version();
 
 SELECT *,FROM_UNIXTIME(createTime/1000, '%Y-%m-%d %H:%i:%s') 
 
+* 查询注意
+
+SELECT * FROM ibd_cm.task_job where jobCode = "201705150944-1" 如果把双引号去掉会查不出来
+
 <br>
 
