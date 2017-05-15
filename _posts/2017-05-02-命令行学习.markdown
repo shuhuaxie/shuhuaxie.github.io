@@ -23,10 +23,12 @@ pwd
 head -5 /etc/passwd 
 2. 如果你想查看文件的后10行，可以使用tail命令，如： 
 tail -10 /etc/passwd 或 tail -n 10 /etc/passwd 
-tail -f /var/log/messages 
+tail -f /var/log/messages //参数-f使tail不停地去读最新的内容，这样有实时监视的效果 用Ctrl＋c来终止！ 
 3. 筛选文件内容
+```shell
 grep 'decode.failure' debug.20170428.0.log |more
-
+grep 工单 debug.log|grep 22:16:16.054 //多次搜索
+```
 * last
 该命令用来列出目前与过去登录系统的用户相关信息。指令英文原义：show listing of last logged in users
 last -n 5 //仅输出前五行
@@ -46,13 +48,32 @@ date 打印日期
 * 更新进程的一系列操作
 ```shell
 //查询java进程
-ps -ef | grep java
+ps -elf | grep java
 // 杀死查询到的进程
 kill -9  $pid
+//删除老文件
+rm ibd-gather-api-1.1-SNAPSHOT.jar
+// 重命名文件
+mv ibd-gather-api-1.1-SNAPSHOT.jar.0 ibd-gather-api-1.1-SNAPSHOT.jar
 //运行新的jar
 java -jar $jar-name "--spring.profiles.active=local" &
 //查询历史执行操作
 history
+history | grep "data-api"
+```
+ 
+* 获取当前系统内存占用情况
+top
+* 获取多个文件的过滤信息
+grep "analysis hbase" debug.*
+
+* 查找文件
+```shell
+find */*/*log // 查找当前目录下2级目录中，以log结尾的文件
+find /*/log //查询根目录下级目录为log的文件
+find -atime -2 // 查找2个小时内修改过的文件  -amin -10 为10分钟内
+find . -name *ibd-data //查找当前目录以下的文件
+find . -size +1000c -print //查找当前目录以下大于1k的文件
 ```
 <br>
 
