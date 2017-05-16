@@ -80,6 +80,9 @@ find . -size +1000c -print //查找当前目录以下大于1k的文件
 $ echo 'pwd' // 结果 pwd
 $ echo `pwd` // 结果 /home/zhangyc
 ```
-
+* 打印当前path
+```shell
+echo $PATH | sed 's/:/\n/g'
+```
 <br>
 
