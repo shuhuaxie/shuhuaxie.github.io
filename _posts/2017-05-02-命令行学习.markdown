@@ -84,5 +84,14 @@ $ echo `pwd` // 结果 /home/zhangyc
 ```shell
 echo $PATH | sed 's/:/\n/g'
 ```
+* 命令帮助 “man + 命令”了解这个命令能确切是做什么的。
+
+* 常用命令
+
+free //内存 
+df //硬盘 
+type ls //查询命令的真实执行 
+clear //清空屏幕
+
 <br>
 

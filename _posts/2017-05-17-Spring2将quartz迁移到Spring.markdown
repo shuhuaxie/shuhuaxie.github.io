@@ -1,12 +1,11 @@
 ---
 layout: post
-title:  "Spring"
+title:  "Spring-Quartz"
 date:   2017-05-10 16:51:30 +0800
 
 ---
-* 使用intellij创建空mvn项目
-* 在mvn中增加parent:spring-boot-starter-parent,dep:spring-boot-starter-web
-* 新增HelloController
+* 迁移Spring界面
+使用springboot不要将<spring.version>3.1.3.RELEASE</spring.version>放入properties中
 
 ```java
 package hello;
@@ -56,9 +55,6 @@ public class GreetingCont{
         }
 }
 ```
-Spring doc
-http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle
-
 
 <br>
 

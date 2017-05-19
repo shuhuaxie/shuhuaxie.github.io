@@ -61,6 +61,6 @@ public static void main(String... args){
         </build>
     
 ```
-
+* mvn dependency:tree 查看jar包依赖
 <br>
 
