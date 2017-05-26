@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "k8s"
+date:   2017-05-22 16:51:30 +0800
+
+---
+* start
+https://kubernetes.io/docs/tasks/tools/install-minikube/
+* Installing kubectl
+1) curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt获取最新稳定版本
+2) curl -LO https://storage.googleapis.com/kubernetes-release/release/${版本}/bin/windows/amd64/kubectl.exe
+3) 搜索kubectl并将其放入制定文件夹中,加入path环境
+4) 在命令行中输入kubectl,出现帮助文档,配置成功
+5) 参考网址 https://kubernetes.io/docs/tasks/tools/install-kubectl/
+* Installing Minikube
+https://github.com/kubernetes/minikube/releases
+* Minikube 安装简易服务
+https://kubernetes.io/docs/getting-started-guides/minikube/
+* 打开dashboard
+$ minikube dashboard
+<br>
+
