@@ -9,7 +9,7 @@ date:   2017-05-02 16:51:30 +0800
 du -h -d 1 debug.14.log <br>
 
 * ls 命令
-
+ll
 ls -lht 文件按照时间排序
 ls target/ibd-data-api*.jar ls特定文件
 ls wangxc/ibd*.yaml  | awk -f'/' '{print$2}' ls特定文件，并以‘/’进行分割打印
@@ -23,11 +23,20 @@ pwd
 head -5 /etc/passwd 
 2. 如果你想查看文件的后10行，可以使用tail命令，如： 
 tail -10 /etc/passwd 或 tail -n 10 /etc/passwd 
-tail -f /var/log/messages //参数-f使tail不停地去读最新的内容，这样有实时监视的效果 用Ctrl＋c来终止！ 
+tail -f /var/log/messages //参数-f使tail不停地去读最新的内容，这样有实时监视的效果 用Ctrl＋c来终止！
 3. 筛选文件内容
 ```shell
 grep 'decode.failure' debug.20170428.0.log |more
 grep 工单 debug.log|grep 22:16:16.054 //多次搜索
+grep ERROR debug.* |wc -l //查询到的行数
+grep -10 ERROR ibd-data-api.app.debug.20170622.log //输出grep到数据的 前后10行
+```
+4. 通过grep ERROR log.*定位到文件后,需要查看详细的错误
+```shell
+less debug.6.log.bak 打开定位到的文件
+输入 /doJobstat error 跳转到错误信息
+回车向下拉信息
+q 退出less
 ```
 * last
 该命令用来列出目前与过去登录系统的用户相关信息。指令英文原义：show listing of last logged in users
@@ -74,6 +83,7 @@ find /*/log //查询根目录下级目录为log的文件
 find -atime -2 // 查找2个小时内修改过的文件  -amin -10 为10分钟内
 find . -name *ibd-data //查找当前目录以下的文件
 find . -size +1000c -print //查找当前目录以下大于1k的文件
+find / -type f -name *scheduler*//搜索全部文件
 ```
 * 特殊字符
 ```shell
@@ -92,6 +102,24 @@ free //内存
 df //硬盘 
 type ls //查询命令的真实执行 
 clear //清空屏幕
+gunzip //解压缩
 
+* 下载
+利用SecureCRT上传、下载文件（使用sz与rz命令）
+借助securtCRT，使用Linux命令sz可以很方便的将服务器上的文件下载到本地，使用rz命令则是把本地文件上传到服务器。
+
+* 导出文件
+将搜索结果到处到文件.
+mysql -h ****.aliyuncs.com -u user01 -P 3306 -p 'ibd_cm' -e "select now()"  > ./test.txt
 <br>
+
+* pid
+[zhangyc@litao ~]$ echo $$
+24206
+[zhangyc@litao ~]$ echo $!
+
+[zhangyc@litao ~]$ echo $0
+-bash
+[zhangyc@litao ~]$
+
 
