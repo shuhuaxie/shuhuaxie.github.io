@@ -38,6 +38,7 @@ SELECT
     (UNIX_TIMESTAMP('2017-06-26 00：00：00')),
     (UNIX_TIMESTAMP('2017-06-26')),
     FROM_UNIXTIME('1498406400');
+
 * 数据库函数
 SELECT
     CONCAT(id, '-', jobCode) '工单Id+工单号',
@@ -47,5 +48,23 @@ FROM
     task_job;
 
 * 数据库命令
-    show table status  -- 显示当前库所有表的状态
+    show table status;  -- 显示当前库所有表的状态
+    show processlist;   -- 显示连接数
+    select * from information_schema.processlist  where db = 'ibd_cm';
 
+* 索引
+where语句的=后面值需要和存储类型保持一致(字符串或者数字),否则索引会无效.
+
+* 日期函数
+DATE_ADD('2017-07-27 10:00:00', INTERVAL - 600 MINUTE)
+
+* 下载文件
+sz -e ibd_cm_20170818_1736.sql.gz
+
+* 组内数据合并
+select id, group_concat(mainFieldName) from gather_product_info where jobId = 342749810820006912 group by hbaseId;
+267623	良品,不良,工序进度,废品
+267630	废品,工序进度,不良,良品
+267640	废品,工序进度,不良,良品
+267641	良品,工序进度
+267643	良品,工序进度

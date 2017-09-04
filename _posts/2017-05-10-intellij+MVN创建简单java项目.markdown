@@ -62,5 +62,10 @@ public static void main(String... args){
     
 ```
 * mvn dependency:tree 查看jar包依赖
+
+* mvn 包损坏,点击 右边的 Maven Projects然后点击 左上角的reimport 按钮(刷新)
+
+* 出现String过长问题,将Java Compiler改为Eclipse;出现注解无法编译的重新改回为javac;
+
 <br>
 

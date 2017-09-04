@@ -8,6 +8,9 @@ date:   2017-05-02 16:51:30 +0800
 
 du -h -d 1 debug.14.log <br>
 
+* 压缩
+tar czvf mydb.tar tmp8_28mydb.sql
+
 * ls 命令
 ll
 ls -lht 文件按照时间排序
@@ -35,6 +38,8 @@ grep -10 ERROR ibd-data-api.app.debug.20170622.log //输出grep到数据的 前�
 ```shell
 less debug.6.log.bak 打开定位到的文件
 输入 /doJobstat error 跳转到错误信息
+n 查找下一个匹配的文本
+N 查找下一个匹配的文本
 回车向下拉信息
 q 退出less
 ```
@@ -58,6 +63,7 @@ date 打印日期
 ```shell
 //查询java进程
 ps -elf | grep java
+jps 查看java进程 列出所有的jvm实例
 // 杀死查询到的进程
 kill -9  $pid
 //删除老文件
@@ -103,10 +109,13 @@ df //硬盘
 type ls //查询命令的真实执行 
 clear //清空屏幕
 gunzip //解压缩
+cp ibd-msg-server.app.debug.20170831.0.20170831.log.gz /tmp
+gunzip ibd-msg-server.app.debug.20170831.0.20170831.log.gz
 
 * 下载
 利用SecureCRT上传、下载文件（使用sz与rz命令）
 借助securtCRT，使用Linux命令sz可以很方便的将服务器上的文件下载到本地，使用rz命令则是把本地文件上传到服务器。
+sz -e ibd_cm_20170818_1736.sql.gz
 
 * 导出文件
 将搜索结果到处到文件.
@@ -121,5 +130,9 @@ mysql -h ****.aliyuncs.com -u user01 -P 3306 -p 'ibd_cm' -e "select now()"  > ./
 [zhangyc@litao ~]$ echo $0
 -bash
 [zhangyc@litao ~]$
+* curl 进行post请求
+curl -l -H "Content-type: application/json" -X POST -d '{"tenantId":"72321437475850240","beginTimeStamp":"1500998400000","endTimeStamp":"1501084800000"}' http://10.0.4.50:3100/sapi/v1/production_plan/job_plan_num
+* curl 带空格转换为+
+curl "http://172.16.8.118:9604/sapi/v1/dataApi/doJobStat?startTime=2017-08-03+00:00:00&endTime=2017-08-04+00:00:00"
 
 

@@ -18,5 +18,7 @@ https://github.com/kubernetes/minikube/releases
 https://kubernetes.io/docs/getting-started-guides/minikube/
 * 打开dashboard
 $ minikube dashboard
+* 删除pod
+kubectl delete pod ibd-backend-msg-1735154886-hbp11 -n ibd
 <br>
 

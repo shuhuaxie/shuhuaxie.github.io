@@ -1,0 +1,28 @@
+---
+layout: post
+title:  "反射学习"
+date:   2017-08-20 16:51:30 +0800
+
+---
+* 如何反射内部类
+用$将主类和内部类分割开
+Class clazz = Class.forName("Test$Person");
+* 反射类中的类
+    private static Object inflateClass(String className) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+        Class clazz = Class.forName(className);
+        Object p = clazz.newInstance();
+        Field[] fields = clazz.getDeclaredFields();
+        for (Field f : fields) {
+            if (f.getType().getSimpleName().equals("String")) {
+                f.set(p, "王五");
+            } else if (f.getType().getSimpleName().equals("int")) {
+                f.set(p, 3);
+            } else if ((f.getType().isInterface() ? "interface " : (f.getType().isPrimitive() ? "" : "class")).equals("class")) {
+                f.set(p, inflateClass(f.getType().getName()));
+            }
+        }
+        return p;
+    }
+
+
+

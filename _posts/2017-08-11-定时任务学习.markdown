@@ -1,0 +1,44 @@
+---
+layout: post
+title:  "定时任务学习"
+date:   2017-08-11 09:00:30 +0800
+
+---
+* 使用官方jar运行helloWorld
+    1)下载并运行单机zookeeper服务端
+    2)设置本机地址为zookeeper,并正确运行HelloWorld定时任务
+        增加辅助jar包slf4j-log4j12-1.7.5.jar
+* 注入自己写的测试代码
+    1)打jar包,使用自己打的jar包正确运行
+        ①增加测试mvn 内容
+            <dependency>
+                <groupId>com.dangdang</groupId>
+                <artifactId>elastic-job-common-core</artifactId>
+                <version>2.0.4</version>
+            </dependency>
+        ②增加自己build的jar包
+            elastic-job-common-core-2.1.5.jar
+            elastic-job-lite-core-2.1.5.jar
+    2)helloWorld运行流程初探
+        ①firstTest
+            在JobScheduler的init方法开头加log,重新打包并部署到test项目的lib目录下.运行测试项目,打出log信息.
+        ②JobScheduler报错信息解决.
+            开发环境引入lombok插件
+    3)理解zookeeper
+        ①Curator Netflix开源的一套ZooKeeper客户端框架
+            Tree Cache:监视路径下的创建、更新、删除事件，并缓存路径下所有孩子结点的数据
+        ②zookeeper可以帮助选举总管理者,可以帮助管理各个节点的状态,可以在节点发生变化时通知其他节点
+        ③定时任务需要做的事
+            注册为一个监控状态的节点,运行选举算法;
+            在运行时中 根据自己是否是主节点,进行分派任务或者执行任务的动作;
+            监听各个节点的状态,并在主节点失效或者增加减少节点时,做出处理;
+    4)整体运行流程
+        ①每一个定时任务注册一个zookeeper nameSpace，选举一个主节点
+        ②注册quartz,将自己的实现放到定时任务的execute里面
+        ③在定时执行时，判断是否需要重新选举。
+                        如果需要开始选举，全部节点等待，主节点将选举结果保存为临时节点
+                      判断是否需要重新分派任务
+                        如果需要，全部节点等待，主节点开始根据存活节点和定义总分片数开始分配任务保存到zookeeper中
+                      所有节点根据zookeeper中分配的分片开始工作。s
+
+
