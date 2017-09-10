@@ -56,9 +56,22 @@ public class GreetingCont{
         }
 }
 ```
-Spring doc
+* Spring doc
+
 http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle
 
-
+* Spring中使用Json
+只需要返回带有get和set的bean就行,下面的设置在Spring中有默认值
+ ```text
+  produces= MediaType.APPLICATION_JSON_UTF8_VALUE
+  public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
+  Controller / RestController
+  		<dependency>
+  			<groupId>com.alibaba</groupId>
+  			<artifactId>fastjson</artifactId>
+  			<version>1.2.20</version>
+  		</dependency>
+   
+```
 <br>
 
