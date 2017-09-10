@@ -59,6 +59,10 @@ public class GreetingCont{
 * Spring doc
 
 http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle
+=======
+1)Spring在项目中的作用
+2)Spring的使用难点
+3)Spring的原理
 
 * Spring中使用Json
 只需要返回带有get和set的bean就行,下面的设置在Spring中有默认值

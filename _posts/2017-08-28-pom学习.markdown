@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "pom学习"
+date:   2017-08-28 16:51:30 +0800
+
+---
+* pom如何打聚合项目的包
+Maven 3支持Maven项目的多模块（multi-modules）结构。这样的Maven项目也被称为聚合项目，通常由一个父模块和若干个子模块构成。
+
+其中，父模块必须以pom打包类型，同时以<modules>给出所有的子模块。父模块的POM示例如
+<packaging>pom</packaging>
+
+<modules>
+  <module>my-frontend-project</module>
+  <module>my-service-project</module>
+  <module>my-backend-project</module>
+</modules>
+其中的每个module，都是另外一个Maven项目
+
+
+
