@@ -68,3 +68,23 @@ select id, group_concat(mainFieldName) from gather_product_info where jobId = 34
 267640	废品,工序进度,不良,良品
 267641	良品,工序进度
 267643	良品,工序进度
+
+* 创建表的语句
+show create table sys.test;
+
+ * 表状态展示
+show table status;
+
+SQL语句优化
+不需要考虑的因素:存储引擎,数据吞吐量,锁机制,CPU带宽等外部物理因素,更新删除等操作,基准测试,服务器总体负荷
+需要考虑的因素:取出数据的流程和效率(磁盘IO内容,数据运算)
+
+
+
+
+
+
+
+
+
+

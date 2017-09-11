@@ -42,6 +42,8 @@ n 查找下一个匹配的文本
 N 查找下一个匹配的文本
 回车向下拉信息
 q 退出less
+G 跳转到文件末尾
+g 跳转到文件头部
 ```
 * last
 该命令用来列出目前与过去登录系统的用户相关信息。指令英文原义：show listing of last logged in users
