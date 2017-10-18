@@ -79,3 +79,14 @@ http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle
 ```
 <br>
 
+* Spring的启动流程
+1)启动Spring 核心 IOC等
+2)根据注解进行Spring组件初始化
+3)根据配置信息对特定的bean进行初始化和修改变量操作
+4)启动第三方jar包
+5)运行客户代码,正式启动
+
+
+
+
+

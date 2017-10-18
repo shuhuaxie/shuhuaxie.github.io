@@ -33,6 +33,7 @@ grep 'decode.failure' debug.20170428.0.log |more
 grep 工单 debug.log|grep 22:16:16.054 //多次搜索
 grep ERROR debug.* |wc -l //查询到的行数
 grep -10 ERROR ibd-data-api.app.debug.20170622.log //输出grep到数据的 前后10行
+kubectl get pod --all-namespaces -o wide | grep   -e api-data -e data-jobs  -e msg-server -e gather-api //匹配多个条件
 ```
 4. 通过grep ERROR log.*定位到文件后,需要查看详细的错误
 ```shell
@@ -117,7 +118,7 @@ gunzip ibd-msg-server.app.debug.20170831.0.20170831.log.gz
 * 下载
 利用SecureCRT上传、下载文件（使用sz与rz命令）
 借助securtCRT，使用Linux命令sz可以很方便的将服务器上的文件下载到本地，使用rz命令则是把本地文件上传到服务器。
-sz -e ibd_cm_20170818_1736.sql.gz
+sz -e ibd-gather-api.app.gather_data_info.20171009.log
 
 * 导出文件
 将搜索结果到处到文件.
@@ -161,4 +162,8 @@ BEGIN
 
   INSERT INTO backend_op_log (op, msg) VALUES ('proc_delete_job_run_info done', var_msg);
 END
+
+* 查看连接信息
+SELECT * FROM `information_schema`.`PROCESSLIST` p WHERE p.`HOST` LIKE '%10.28.143.1%'
+
 

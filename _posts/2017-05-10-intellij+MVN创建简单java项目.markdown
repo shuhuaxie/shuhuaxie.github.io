@@ -67,5 +67,6 @@ public static void main(String... args){
 
 * 出现String过长问题,将Java Compiler改为Eclipse;出现注解无法编译的重新改回为javac;
 
+* intelliJ可以恢复误删除的代码, VCS->History->Show History
 <br>
 
