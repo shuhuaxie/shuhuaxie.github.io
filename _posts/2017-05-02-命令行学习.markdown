@@ -166,4 +166,6 @@ END
 * 查看连接信息
 SELECT * FROM `information_schema`.`PROCESSLIST` p WHERE p.`HOST` LIKE '%10.28.143.1%'
 
-
+* 登录初始化
+/etc/profile，/etc/bashrc 是系统全局环境变量设定
+~/.profile，~/.bashrc用户家目录下的私有环境变量设定
