@@ -105,8 +105,9 @@ INSERT ignore INTO job_procedure_status
 (jobId, procedureId, procStatus)
 (select jobId, procedureId, procStatus from procedure_process_state )
 
+* 数据库导出
 
-
+mysqldump -h rm-bp1lny29wth884d69.mysql.rds.aliyuncs.com -u user01 -p -d ibd_cm > /tmp/sqlxx.sql
 
 
 

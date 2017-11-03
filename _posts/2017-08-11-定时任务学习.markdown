@@ -42,3 +42,5 @@ date:   2017-08-11 09:00:30 +0800
                       所有节点根据zookeeper中分配的分片开始工作。
 
 
+注意:spring-jobs.xml文件中,reg:zookeeper不能换行.
+

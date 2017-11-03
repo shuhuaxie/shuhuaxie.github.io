@@ -114,7 +114,7 @@ clear //清空屏幕
 gunzip //解压缩
 cp ibd-msg-server.app.debug.20170831.0.20170831.log.gz /tmp
 gunzip ibd-msg-server.app.debug.20170831.0.20170831.log.gz
-
+gunzip -c ibd-gather-api.app.gather_data_info.20171023.log.gz > /tmp/xx.log
 * 下载
 利用SecureCRT上传、下载文件（使用sz与rz命令）
 借助securtCRT，使用Linux命令sz可以很方便的将服务器上的文件下载到本地，使用rz命令则是把本地文件上传到服务器。

@@ -17,5 +17,17 @@ Maven 3支持Maven项目的多模块（multi-modules）结构。这样的Maven�
 </modules>
 其中的每个module，都是另外一个Maven项目
 
+* 排查有冲突的jar包
+mvn dependency:tree -Dverbose -Dincludes=<groupId>:<artifactId>
+mvn dependency:tree -Dverbose -Dincludes=:notify-common  (可以省略groupId)
+http://blog.csdn.net/guanglihuan/article/details/50512855
+
+* 引入新的jar包,可以在网址里面搜索
+http://mvnrepository.com
+
+* 默认deploy是发布到中央仓库.
+如果没有配置会报错:Failed to execute goal org.apache.maven.plugins:maven-gpg-plugin
+
+
 
 
