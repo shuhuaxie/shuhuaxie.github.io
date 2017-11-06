@@ -137,6 +137,8 @@ mysql -h ****.aliyuncs.com -u user01 -P 3306 -p 'ibd_cm' -e "select now()"  > ./
 curl -l -H "Content-type: application/json" -X POST -d '{"tenantId":"72321437475850240","beginTimeStamp":"1500998400000","endTimeStamp":"1501084800000"}' http://10.0.4.50:3100/sapi/v1/production_plan/job_plan_num
 * curl 带空格转换为+,如果不能正常请求,需要把网址用双引号括起来
 curl "http://172.16.8.118:9604/sapi/v1/dataApi/doJobStat?startTime=2017-08-03+00:00:00&endTime=2017-08-04+00:00:00"
+* curl 带请求时间
+curl -w "time_connect: %{time_connect}\ntime_starttransfer: %{time_starttransfer}\ntime_total: %{time_total}\n" -o /dev/null -s -L http://172.16.11.219:9604/sapi/v1/dataApi/status
 * 数据可编程对象(阿里云支持功能可以结合触发器,做数据库定时任务)
 CREATE PROCEDURE `proc_delete_job_run_info`(
 		in_date DATE
