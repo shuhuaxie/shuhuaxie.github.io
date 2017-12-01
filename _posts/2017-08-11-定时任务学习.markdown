@@ -39,6 +39,25 @@ date:   2017-08-11 09:00:30 +0800
                         如果需要开始选举，全部节点等待，主节点将选举结果保存为临时节点
                       判断是否需要重新分派任务
                         如果需要，全部节点等待，主节点开始根据存活节点和定义总分片数开始分配任务保存到zookeeper中
-                      所有节点根据zookeeper中分配的分片开始工作。s
+                      所有节点根据zookeeper中分配的分片开始工作。
+
+
+注意:spring-jobs.xml文件中,reg:zookeeper不能换行.
+
+* job-lite-spring 是elastic-job通过spring来启动的入口
+1. 项目中配置 spring-jobs文件.
+2. 在IbdDataApiApplication中增加读取配置文件的注解 @ImportResource(locations = {"classpath:spring-jobs.xml"})
+3. 在运行项目时,读取配置文件,在job-lite-spring中spring.schemas关联到 job.xsd reg.xsd定义了xml的格式
+4. spring.handlers 定义了xml的解析对象
+5. RegNamespaceHandler 将任务递交给ZookeeperBeanDefinitionParser,后者以spring的方式创建和初始化 ZookeeperRegistryCenter;
+ BeanDefinitionBuilder result = BeanDefinitionBuilder.rootBeanDefinition(ZookeeperRegistryCenter.class);
+        result.addConstructorArgValue(buildZookeeperConfigurationBeanDefinition(element));
+        result.setInitMethodName("init");
+zookeeper 正式启动;
+6. JobNamespaceHandler 将任务递交给SimpleJobBeanDefinitionParser->AbstractJobBeanDefinitionParser,
+后者以spring的方式创建和初始化 SpringJobScheduler;
+BeanDefinitionBuilder factory = BeanDefinitionBuilder.rootBeanDefinition(SpringJobScheduler.class);
+        factory.setInitMethodName("init");
+定时任务正式启动
 
 

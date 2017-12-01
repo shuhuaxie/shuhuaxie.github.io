@@ -67,5 +67,10 @@ public static void main(String... args){
 
 * 出现String过长问题,将Java Compiler改为Eclipse;出现注解无法编译的重新改回为javac;
 
+* intelliJ可以恢复误删除的代码, VCS->History->Show History
 <br>
+
+* 依赖注解的项目设置
+Intellij idea开发的话需要安装Lombok plugin，
+同时设置 Setting -> Compiler -> Annotation Processors -> Enable annotation processing勾选。
 

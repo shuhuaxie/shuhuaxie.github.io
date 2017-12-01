@@ -1,0 +1,90 @@
+---
+layout: post
+title:  "Spring"
+date:   2017-09-20 10:51:30 +0800
+
+---
+* @Transactional为类或者方法内的数据库操作添加事务
+
+```java
+@Transactional
+public class AnalysisSaveManager {
+    public boolean handleDirectly(List<GatherData> gatherDataList) {
+        try {
+            // do something 1
+        } catch (Exception e){
+
+        }
+        try {
+            // do something 2
+        } catch (Exception e){
+
+        }
+    }
+}
+
+* 注意 函数里所有的操作 都会设定为一次事务,而且这次事务不会被try catch打断. 1和2依然是一个事务中
+
+* 嵌套注解
+1.内外层的注解必须是@Target({ElementType.TYPE})类型,这样才能把注解 从A传递到B
+
+```java
+
+package org.springframework.boot.autoconfigure;
+
+import java.lang.annotation.Documented;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Inherited;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+import org.springframework.boot.SpringBootConfiguration;
+import org.springframework.boot.context.TypeExcludeFilter;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.FilterType;
+import org.springframework.context.annotation.ComponentScan.Filter;
+import org.springframework.core.annotation.AliasFor;
+
+@Target({ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+@Inherited
+@SpringBootConfiguration
+@EnableAutoConfiguration
+@ComponentScan(
+    excludeFilters = {@Filter(
+    type = FilterType.CUSTOM,
+    classes = {TypeExcludeFilter.class}
+), @Filter(
+    type = FilterType.CUSTOM,
+    classes = {AutoConfigurationExcludeFilter.class}
+)}
+)
+public @interface SpringBootApplication {
+    @AliasFor(
+        annotation = EnableAutoConfiguration.class,
+        attribute = "exclude"
+    )
+    Class<?>[] exclude() default {};
+
+    @AliasFor(
+        annotation = EnableAutoConfiguration.class,
+        attribute = "excludeName"
+    )
+    String[] excludeName() default {};
+
+    @AliasFor(
+        annotation = ComponentScan.class,
+        attribute = "basePackages"
+    )
+    String[] scanBasePackages() default {};
+
+    @AliasFor(
+        annotation = ComponentScan.class,
+        attribute = "basePackageClasses"
+    )
+    Class<?>[] scanBasePackageClasses() default {};
+}
+```
+2.@AliasFor 可以将配置参数从使用者传递到内部注解
+

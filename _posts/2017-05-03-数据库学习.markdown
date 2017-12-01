@@ -79,3 +79,44 @@ select id, group_concat(mainFieldName) from gather_product_info where jobId = 34
     MySQL只有对以下操作符才使用索引：<，<=，=，>，>=，BETWEEN，IN，以及xx%的LIKE。
 3)A join B 会不会在联结的时候使用B的索引,如果联结项有多个,如何合理使用索引
     对于有联接的列，即使最后的联接值为一个静态值，优化器是不会使用索引的。
+
+* 创建表的语句
+show create table sys.test;
+
+ * 表状态展示
+show table status;
+
+SQL语句优化
+不需要考虑的因素:存储引擎,数据吞吐量,锁机制,CPU带宽等外部物理因素,更新删除等操作,基准测试,服务器总体负荷
+需要考虑的因素:取出数据的流程和效率(磁盘IO内容,数据运算)
+
+* 索引注意
+select  jobId, procedureId from gather_data_info where jobId = 361896323175656192     没有使用索引
+select  jobId, procedureId from gather_data_info where jobId = '361896323175656192'   使用索引
+
+* unique类似与primary
+
+特别是当索引是组合索引的时候
+
+如果组合是唯一的,并且需要根据唯一值查询
+
+那么可以把他们设为主键primary或者unique
+
+原来一个1G大小的表
+
+使用index索引时,经常导致慢查询,耗时2秒左右,遇忙时更有达到5秒的
+
+改用unique之后,查询耗时在0.0003秒 基本可以忽略不计
+
+* if 语句
+if(b.procedureName IS NULL ,c.templateName ,b.procedureName)
+
+* 表之间交换数据
+INSERT ignore INTO job_procedure_status
+(jobId, procedureId, procStatus)
+(select jobId, procedureId, procStatus from procedure_process_state )
+
+* 数据库导出
+
+mysqldump -h rm-bp1lny29wth884d69.mysql.rds.aliyuncs.com -u user01 -p -d ibd_cm > /tmp/sqlxx.sql
+

@@ -17,5 +17,33 @@ Maven 3支持Maven项目的多模块（multi-modules）结构。这样的Maven�
 </modules>
 其中的每个module，都是另外一个Maven项目
 
+* 排查有冲突的jar包
+mvn dependency:tree -Dverbose -Dincludes=<groupId>:<artifactId>
+mvn dependency:tree -Dverbose -Dincludes=:notify-common  (可以省略groupId)
+http://blog.csdn.net/guanglihuan/article/details/50512855
+
+* 引入新的jar包,可以在网址里面搜索
+http://mvnrepository.com
+
+* 默认deploy是发布到中央仓库.
+如果没有配置会报错:Failed to execute goal org.apache.maven.plugins:maven-gpg-plugin
+
+* 本地dependency 不能正确的编译
+<dependency>
+              <groupId>com.dangdang</groupId>
+              <artifactId>elastic-job-lite-console</artifactId>
+              <version>2.1.5</version>
+              <scope>system</scope>
+              <systemPath>
+                  E:/download/elastic-job-master/elastic-job-master/elastic-job-lite/elastic-job-lite-console/target/elastic-job-lite-console-2.1.5.jar
+              </systemPath>
+          </dependency>
+需要把jar包放到项目的lib文件夹下,add library.
+* 修改本地jar后不能运行.
+混合使用本地jar和远程仓库jar 有时候不能正确编译
+删除本地jar的时候需要 右键项目 右键依赖 删除,再重新添加
+mvn clean,右键项目 左侧项目文件夹 rebuild module, compile 然后 run,顺序不能错
+
+
 
 

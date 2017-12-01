@@ -33,6 +33,7 @@ grep 'decode.failure' debug.20170428.0.log |more
 grep 工单 debug.log|grep 22:16:16.054 //多次搜索
 grep ERROR debug.* |wc -l //查询到的行数
 grep -10 ERROR ibd-data-api.app.debug.20170622.log //输出grep到数据的 前后10行
+kubectl get pod --all-namespaces -o wide | grep   -e api-data -e data-jobs  -e msg-server -e gather-api //匹配多个条件
 ```
 4. 通过grep ERROR log.*定位到文件后,需要查看详细的错误
 ```shell
@@ -42,6 +43,8 @@ n 查找下一个匹配的文本
 N 查找下一个匹配的文本
 回车向下拉信息
 q 退出less
+G 跳转到文件末尾
+g 跳转到文件头部
 ```
 * last
 该命令用来列出目前与过去登录系统的用户相关信息。指令英文原义：show listing of last logged in users
@@ -111,11 +114,11 @@ clear //清空屏幕
 gunzip //解压缩
 cp ibd-msg-server.app.debug.20170831.0.20170831.log.gz /tmp
 gunzip ibd-msg-server.app.debug.20170831.0.20170831.log.gz
-
+gunzip -c ibd-gather-api.app.gather_data_info.20171023.log.gz > /tmp/xx.log
 * 下载
 利用SecureCRT上传、下载文件（使用sz与rz命令）
 借助securtCRT，使用Linux命令sz可以很方便的将服务器上的文件下载到本地，使用rz命令则是把本地文件上传到服务器。
-sz -e ibd_cm_20170818_1736.sql.gz
+sz -e ibd-gather-api.app.gather_data_info.20171009.log
 
 * 导出文件
 将搜索结果到处到文件.
@@ -132,7 +135,39 @@ mysql -h ****.aliyuncs.com -u user01 -P 3306 -p 'ibd_cm' -e "select now()"  > ./
 [zhangyc@litao ~]$
 * curl 进行post请求
 curl -l -H "Content-type: application/json" -X POST -d '{"tenantId":"72321437475850240","beginTimeStamp":"1500998400000","endTimeStamp":"1501084800000"}' http://10.0.4.50:3100/sapi/v1/production_plan/job_plan_num
-* curl 带空格转换为+
+* curl 带空格转换为+,如果不能正常请求,需要把网址用双引号括起来
 curl "http://172.16.8.118:9604/sapi/v1/dataApi/doJobStat?startTime=2017-08-03+00:00:00&endTime=2017-08-04+00:00:00"
+* curl 带请求时间
+curl -w "time_connect: %{time_connect}\ntime_starttransfer: %{time_starttransfer}\ntime_total: %{time_total}\n" -o /dev/null -s -L http://172.16.11.219:9604/sapi/v1/dataApi/status
+* 数据可编程对象(阿里云支持功能可以结合触发器,做数据库定时任务)
+CREATE PROCEDURE `proc_delete_job_run_info`(
+		in_date DATE
+)
+BEGIN
+  DECLARE var_cnt INT DEFAULT 0;
+  DECLARE var_cnt_del INT DEFAULT 0;
+  DECLARE var_msg VARCHAR(100) DEFAULT '';
+  DECLARE var_date_before_3 DATE DEFAULT NULL;
+
+  SET var_date_before_3 = DATE_ADD(in_date,INTERVAL -3 DAY);
+
+  SELECT COUNT(1) INTO var_cnt FROM backend_job_run_info WHERE jobStartAt >= var_date_before_3;
 
 
+  IF var_cnt > 0 THEN
+    DELETE FROM backend_job_run_info WHERE jobStartAt < var_date_before_3;
+    SET var_cnt_del = ROW_COUNT();
+  END IF;
+
+  SET var_msg = CONCAT('in_date=', in_date, ',3_day_cnt=', var_cnt, ',del_cnt=', var_cnt_del);
+
+
+  INSERT INTO backend_op_log (op, msg) VALUES ('proc_delete_job_run_info done', var_msg);
+END
+
+* 查看连接信息
+SELECT * FROM `information_schema`.`PROCESSLIST` p WHERE p.`HOST` LIKE '%10.28.143.1%'
+
+* 登录初始化
+/etc/profile，/etc/bashrc 是系统全局环境变量设定
+~/.profile，~/.bashrc用户家目录下的私有环境变量设定
