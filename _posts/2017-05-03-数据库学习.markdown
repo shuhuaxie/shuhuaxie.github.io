@@ -62,9 +62,20 @@ DATE_ADD('2017-07-27 10:00:00', INTERVAL - 600 MINUTE)
 sz -e ibd_cm_20170818_1736.sql.gz
 
 * 组内数据合并
+
 select id, group_concat(mainFieldName) from gather_product_info where jobId = 342749810820006912 group by hbaseId;
 267623	良品,不良,工序进度,废品
 267630	废品,工序进度,不良,良品
 267640	废品,工序进度,不良,良品
 267641	良品,工序进度
 267643	良品,工序进度
+
+* mysql运行测试
+
+1)A join B 和 B join A 运行先后顺序是否相同  : 
+    顺序不同,一般情况下业务场景两种方式不能转换
+2)Between 是否使用索引 :  
+    对于range类型，选择性小于17%了，就会走全表扫描，而非range。
+    MySQL只有对以下操作符才使用索引：<，<=，=，>，>=，BETWEEN，IN，以及xx%的LIKE。
+3)A join B 会不会在联结的时候使用B的索引,如果联结项有多个,如何合理使用索引
+    对于有联接的列，即使最后的联接值为一个静态值，优化器是不会使用索引的。
