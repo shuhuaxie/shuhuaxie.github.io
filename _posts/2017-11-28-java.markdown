@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "java"
+date:   2017-11-28 09:00:30 +0800
+
+---
+* 简洁用法
+procedureLineDao.insert(Arrays.asList(procedureLine));
+
+
