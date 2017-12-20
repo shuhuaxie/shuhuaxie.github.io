@@ -1,0 +1,11 @@
+---
+layout: post
+title:  "2017-12-18-MySQL"
+date:   2017-12-18 16:51:30 +0800
+
+---
+* 整体结构
+connectors,Management Serveices & Utilities,Connection Pool
+SQL Interface,Parser,Optimizer,Cache和Buffer,Engine
+
+
