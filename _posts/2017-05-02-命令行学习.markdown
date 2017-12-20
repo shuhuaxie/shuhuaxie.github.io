@@ -38,6 +38,7 @@ kubectl get pod --all-namespaces -o wide | grep   -e api-data -e data-jobs  -e m
 4. 通过grep ERROR log.*定位到文件后,需要查看详细的错误
 ```shell
 less debug.6.log.bak 打开定位到的文件
+-N 打开行号
 输入 /doJobstat error 跳转到错误信息
 n 查找下一个匹配的文本
 N 查找下一个匹配的文本
@@ -66,6 +67,7 @@ date 打印日期
 ```shell
 //查询java进程
 ps -elf | grep java
+ps -eo pid,user,comm,args,%cpu,%mem,rss,vsz,sz //查看内存占用
 jps 查看java进程 列出所有的jvm实例
 // 杀死查询到的进程
 kill -9  $pid

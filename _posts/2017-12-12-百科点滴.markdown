@@ -34,4 +34,7 @@ System.out.println("xx:"+d1/d2);
         s2:0.044749998
         xx:0.8468098 //厂商价格只有 原来的0.8倍
 
+* 食品论坛
+http://bbs.foodmate.net/forum-10-1.html
+
 

@@ -126,11 +126,18 @@ SELECT * FROM `gather_data_info` WHERE `serialNumber`<>'' 或者 NOT ISNULL(seri
 * 日期保存
 MySql的时间类型有          Java中与之对应的时间类型
 date                                           java.sql.Date
-Datetime                                    java.sql.Timestamp
+Datetime                                    java.sql.Timestamp/java.util.Date
 Timestamp                                  java.sql.Timestamp
 Time                                          java.sql.Time
 Year                                           java.sql.Date
 
+* 查询数据库总行数
+select table_name,table_rows from information_schema.tables
+where TABLE_SCHEMA = 'ibd_cm'
+order by table_rows desc;
+
+数据库总条数: 491w. 1G硬盘占用,单表最大100w
+每天以 1%的速度增加
 
 
 

@@ -57,6 +57,8 @@ http://www.ttlsa.com/linux-command/use-vim-recording/
 vim 由一行 生成多行,规则复制 (需要用vimscript)
 
 kebuctl 重启
+kubectl delete pod xxx -n ibd
+
 线上数据 模拟运行
 
 
