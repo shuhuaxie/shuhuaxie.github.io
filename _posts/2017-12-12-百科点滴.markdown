@@ -39,5 +39,24 @@ http://bbs.foodmate.net/forum-10-1.html
 * 各种电视节目中关于产品消费的报道
 消费主张
 每周质量报告
+网货每周质量报告
+国家质量监督检验检疫总局门户网站
+百品求实 http://www.baipin.org/
+TODO
+1.点赞
+2.推荐百科导航到分支百科
+3.登录
+4.个人中心
+5.发送图片
+
+* 测试软件
+katalon studio
+
+* 奶制品科普
+https://www.zhihu.com/people/niubuhua/activities
+
+*
+
+
 
 
