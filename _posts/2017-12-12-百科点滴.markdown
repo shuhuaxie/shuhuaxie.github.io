@@ -36,5 +36,8 @@ System.out.println("xx:"+d1/d2);
 
 * 食品论坛
 http://bbs.foodmate.net/forum-10-1.html
+* 各种电视节目中关于产品消费的报道
+消费主张
+每周质量报告
 
 
