@@ -24,3 +24,7 @@ hardwareAcceleratedCanvas
 2) animation 主要在draw方法中执行. ObjectAnimator 主要通过handler定时修改View属性,从外部修改.
 
 
+
+test commit
+
+
