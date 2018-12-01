@@ -1,0 +1,47 @@
+---
+layout: post
+title:  "2018-11-06-Kotlin"
+date:   2018-11-06 12:11:30 +0800
+
+---
+
+* 和java的关系
+java和kotlin可以相互调用，性能相近，引入内联函数会使运行速度更快。
+代码更简洁，kotlin表现力更强。（switch Collection）
+1。将可为空的类型和不可为空类型分离并提供代码和编译检查
+2。无原始类型，更坚定的执行万物皆对象的理念
+3。有闭包
+
+最大的优点：
+1。将可为空的类型和不可为空类型分离
+2。为函数入参提供默认值
+3。协程支持
+
+* 发展趋势
+Google主推的语言未来发展还是很不错的。
+
+* 适用范围
+可用于服务端 javascript IOS android等平台运行。可以在java虚拟机中运行，也可以脱离java虚拟机直接在
+native中运行。
+
+* 详细使用细节和特性
+
+  类型安全的构建器：
+  
+  委托构建:
+  
+  协程:
+
+* 类型安全
+1.  局部变量区分可为空类型。
+2.  成员变量必须初始化。
+3.  可为空变量禁止直接使用，可为空条件下禁止作为条件判断等操作。
+
+
+
+* 参考资料：
+
+代码对比 https://fabiomsr.github.io/from-java-to-kotlin/
+优缺点对比 https://kotlinlang.org/docs/reference/comparison-to-java.html
+
+

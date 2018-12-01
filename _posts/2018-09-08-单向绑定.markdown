@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "2019-09-07-kotlin"
+title:  "2019-09-07-单项绑定"
 date:   2019-09-07 12:11:30 +0800
 
 ---
-* liveData 是带有生命周期的Observable，有live和非live状态，单不能绑定成员变量
+* liveData 是带有生命周期的Observable，有live和非live状态，但不能绑定成员变量
 * BaseObservable 可以实现成员变量的绑定
 * 
 
