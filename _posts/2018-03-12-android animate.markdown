@@ -23,7 +23,36 @@ hardwareAcceleratedCanvas
 
 2) animation 主要在draw方法中执行. ObjectAnimator 主要通过handler定时修改View属性,从外部修改.
 
+view 重绘回调
+http://mp.weixin.qq.com/s/Qod5dW64OT2RK2wnYBGtdA
 
+Log.e("xie","mViewPage1:" + mViewPage.getWidth() );
+        mViewPage.post(new Runnable() {
+            @Override
+            public void run() {
+                Log.e("xie","mViewPage2:" + mViewPage.getWidth() );
+            }
+        });
+        new Handler().post(new Runnable() {
+            @Override
+            public void run() {
+                Log.e("xie","mViewPage3:" + mViewPage.getWidth() );
+            }
+        });
+            @Override
+            public void onWindowFocusChanged(boolean hasFocus) {
+                super.onWindowFocusChanged(hasFocus);
+                Log.e("xie","mViewPage4:" + mViewPage.getWidth() );
+                //do something
+            }
+03-28 19:59:41.102 3837-3837/com.chongdingdahui.app E/xie: mViewPage1:0
+03-28 19:59:41.642 3837-3837/com.chongdingdahui.app E/xie: mViewPage3:1080
+03-28 19:59:41.875 3837-3837/com.chongdingdahui.app E/xie: mViewPage2:1080
+
+03-28 20:02:41.613 5974-5974/com.chongdingdahui.app E/xie: mViewPage1:0
+03-28 20:02:42.123 5974-5974/com.chongdingdahui.app E/xie: mViewPage3:0
+03-28 20:02:42.382 5974-5974/com.chongdingdahui.app E/xie: mViewPage2:1080
+03-28 20:02:42.550 5974-5974/com.chongdingdahui.app E/xie: mViewPage4:1080
 
 test commit
 
