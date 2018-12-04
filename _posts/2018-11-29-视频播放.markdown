@@ -21,6 +21,7 @@ MEPG4拥有高达4000:1的压缩比,是现代视频播放的主流技术标准.
 * 广义的视频直播技术,包括视频推流,视频在服务端解析转码,CDN转发,客户端HTML解码等方面,RTMP在各个方面应用都比较成熟.
 
 * 目前使用协议rtmp，延迟低
+（传输格式rtmp 封装格式flv 编码格式h264）
 
 <div class="table-box"><table border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border-spacing:0px;border:1px solid #C0C0C0;color:rgb(0,0,0);font-family:'Microsoft Yahei';font-size:14px;line-height:21px;width:567px;"><tbody><tr><td valign="top" width="123" style="border:1px solid #C0C0C0;border-collapse:collapse;">
 <p><span style="font-family:'Microsoft YaHei';">协议</span></p>
