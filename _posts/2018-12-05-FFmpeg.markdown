@@ -1,0 +1,23 @@
+---
+layout: post
+title:  "2018-12-05-FFmpeg"
+date:   2018-12-05 12:11:30 +0800
+
+---
+
+* FFmpeg
+
+FFmpeg is the leading multimedia framework, able to decode, encode, transcode, mux, demux, stream, filter and play pretty much anything that humans and machines have created. It supports the most obscure ancient formats up to the cutting edge. No matter if they were designed by some standards committee, the community or a corporation. It is also highly portable: FFmpeg compiles, runs, and passes our testing infrastructure FATE across Linux, Mac OS X, Microsoft Windows, the BSDs, Solaris, etc. under a wide variety of build environments, machine architectures, and configurations.
+
+1. 函数 文档
+http://ffmpeg.org/doxygen/trunk/group__lavf__decoding.html#ga31d601155e9035d5b0e7efedc894ee49
+
+2. 支持联网传输格式
+
+http://ffmpeg.org/general.html#Network-Protocols
+
+
+
+databinding kotlin ijk
+七牛
+通过协议进行页面跳转
