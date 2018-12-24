@@ -13,5 +13,16 @@ https://skyao.io/
 * 技术pdf下载
 https://salttiger.com/page/9/
 
+* 人工智能
+https://blog.just4fun.site/category/%E7%BC%96%E7%A8%8B.html
 
+Microsoft Bot Framework
+https://dev.botframework.com/
 
+https://developers.facebook.com/docs/messenger-platform/getting-started
+
+* flutter
+https://mp.weixin.qq.com/s/cJjKZCqc8UuzvEtxK1BJCw
+
+* 学习网站
+http://www.runoob.com/
