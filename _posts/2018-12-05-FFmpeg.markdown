@@ -13,9 +13,11 @@ FFmpeg 是视频编解码和编辑框架,同时支持解封装绝大多种视频
 支持window,mac和linux等大多数操作系统.
 
 2.视频基础知识
+
 1)视频处理主要包括格式解封装和内容编解码.
 解封装是指将视频内容,音频内容和字幕等流信息进行解压缩的过程(demux/mux)
 格式编解码主要指视频内容的解压缩过程.(decode/encode)
+
 2)主流视频
 文件格式:AVI,MPEG-4,flv,RTMP
 图片格式:YUV,WebP
@@ -32,7 +34,25 @@ FFmpeg 是视频编解码和编辑框架,同时支持解封装绝大多种视频
 * ffplay
 
 ffmpge的测试播放工具,支持各种播放调试参数和常用播放设置
+```$xslt
+/Users/jiecao/Downloads/ffplay http://pl3.live.chongdingdahui.com/cddh/online.flv
+Input #0, flv, from 'http://pl3.live.chongdingdahui.com/cddh/online.flv':
+  Metadata:
+    fileSize        : 0
+    audiochannels   : 2
+    2.1             : false
+    3.1             : false
+    4.0             : false
+    4.1             : false
+    5.1             : false
+    7.1             : false
+    encoder         : obs-output module (libobs version 22.0.2)
+  Duration: 00:00:00.00, start: 0.015000, bitrate: N/A
+    Stream #0:0: Audio: aac (LC), 48000 Hz, stereo, fltp, 163 kb/s
+    Stream #0:1: Video: h264 (High), yuv420p(progressive), 444x960, 2048 kb/s,     nan    :  0.0030 fps, 30 tbr, 1k tbn, 60 tbcB sq=    0B f=0/0   
+ 148.44 A-V: -0.027 fd=   2 aq=   27KB vq=  229KB sq=    0B f=0/0   
 
+```
 * ffprobe
 
 网络视频信息探测工具,检测视频格式和视频流信息和内容.
@@ -60,6 +80,22 @@ Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'https://media.w3.org/2010/05/sintel/tra
     Metadata:
       creation_time   : 1970-01-01T00:00:00.000000Z
       handler_name    : SoundHandler
+/Users/jiecao/Downloads/ffprobe http://pl3.live.chongdingdahui.com/cddh/online.flv      
+Input #0, flv, from 'http://pl3.live.chongdingdahui.com/cddh/online.flv':
+  Metadata:
+    fileSize        : 0
+    audiochannels   : 2
+    2.1             : false
+    3.1             : false
+    4.0             : false
+    4.1             : false
+    5.1             : false
+    7.1             : false
+    encoder         : obs-output module (libobs version 22.0.2)
+  Duration: 00:00:00.00, start: 0.005000, bitrate: N/A
+    Stream #0:0: Audio: aac (LC), 48000 Hz, stereo, fltp, 163 kb/s
+    Stream #0:1: Video: h264 (High), yuv420p(progressive), 444x960, 2048 kb/s, 30 fps, 30 tbr, 1k tbn, 60 tbc
+
 ```
 
 2)主要库文件
