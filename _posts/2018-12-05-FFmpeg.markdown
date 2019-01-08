@@ -37,6 +37,31 @@ ffmpge的测试播放工具,支持各种播放调试参数和常用播放设置
 
 网络视频信息探测工具,检测视频格式和视频流信息和内容.
 
+例如: 
+```
+/Users/jiecao/Downloads/ffprobe https://media.w3.org/2010/05/sintel/trailer.mp4
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'https://media.w3.org/2010/05/sintel/trailer.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    creation_time   : 1970-01-01T00:00:00.000000Z
+    title           : Sintel Trailer
+    artist          : Durian Open Movie Team
+    encoder         : Lavf52.62.0
+    copyright       : (c) copyright Blender Foundation | durian.blender.org
+    description     : Trailer for the Sintel open movie project
+  Duration: 00:00:52.21, start: 0.000000, bitrate: 669 kb/s
+    Stream #0:0(und): Video: h264 (High) (avc1 / 0x31637661), yuv420p, 854x480, 537 kb/s, 24 fps, 24 tbr, 24 tbn, 48 tbc (default)
+    Metadata:
+      creation_time   : 1970-01-01T00:00:00.000000Z
+      handler_name    : VideoHandler
+    Stream #0:1(und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 126 kb/s (default)
+    Metadata:
+      creation_time   : 1970-01-01T00:00:00.000000Z
+      handler_name    : SoundHandler
+```
+
 2)主要库文件
 
 * libavcodec
