@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "2018-01-2-页面加载时间"
+date:   2018-01-2 12:11:30 +0800
+
+---
+
+* 不同layout时间
+
+https://blog.csdn.net/a740169405/article/details/79037191
+
+* hierarchy-viewer is deprecated.
+https://developer.android.com/studio/profile/hierarchy-viewer
+https://android-developers.googleblog.com/2017/08/understanding-performance-benefits-of.html
+

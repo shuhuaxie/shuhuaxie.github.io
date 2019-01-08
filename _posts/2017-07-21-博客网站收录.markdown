@@ -38,3 +38,6 @@ https://bytes.swiggy.com/how-we-improved-our-android-app-cold-start-time-by-53-6
 
 https://redfin.engineering/how-we-improved-our-android-app-cold-start-time-by-28-a722e231314a
 https://stackoverflow.com/questions/14124913/measure-android-app-startup-time
+
+* facebook
+https://code.fb.com/android/improving-facebook-s-performance-on-android-with-flatbuffers/

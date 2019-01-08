@@ -7,17 +7,58 @@ date:   2018-12-05 12:11:30 +0800
 
 * FFmpeg
 
-FFmpeg is the leading multimedia framework, able to decode, encode, transcode, mux, demux, stream, filter and play pretty much anything that humans and machines have created. It supports the most obscure ancient formats up to the cutting edge. No matter if they were designed by some standards committee, the community or a corporation. It is also highly portable: FFmpeg compiles, runs, and passes our testing infrastructure FATE across Linux, Mac OS X, Microsoft Windows, the BSDs, Solaris, etc. under a wide variety of build environments, machine architectures, and configurations.
+1.简介
 
-1. 函数 文档
+FFmpeg 是视频编解码和编辑框架,同时支持解封装绝大多种视频格式,
+支持window,mac和linux等大多数操作系统.
+
+2.视频基础知识
+1)视频处理主要包括格式解封装和内容编解码.
+解封装是指将视频内容,音频内容和字幕等流信息进行解压缩的过程(demux/mux)
+格式编解码主要指视频内容的解压缩过程.(decode/encode)
+2)主流视频
+文件格式:AVI,MPEG-4,flv,RTMP
+图片格式:YUV,WebP
+网络传输格式:HLS,RTMP
+视频压缩格式:FLV,MPEG-4 part 2
+音频压缩格式:AAC
+
+3.内容介绍
+
+1)命令行工具
+* ffmpeg
+
+可以从摄像头和麦克风等工具获取视频文件,也可以对视频文件进行格式转换,帧率修改,视频剪辑合并,加入字幕滤镜等操作.
+* ffplay
+
+ffmpge的测试播放工具,支持各种播放调试参数和常用播放设置
+
+* ffprobe
+
+网络视频信息探测工具,检测视频格式和视频流信息和内容.
+
+2)主要库文件
+
+* libavcodec
+
+视频编解码库
+
+* libavformat
+
+视频格式解封装
+
+* libavdevice
+
+视频录制和视频播放终端
+
+* libavfilter
+
+视频流处理
+
+4. 其他
+* 函数 文档
 http://ffmpeg.org/doxygen/trunk/group__lavf__decoding.html#ga31d601155e9035d5b0e7efedc894ee49
-
-2. 支持联网传输格式
-
+* 支持联网传输格式
 http://ffmpeg.org/general.html#Network-Protocols
 
 
-
-databinding kotlin ijk
-七牛
-通过协议进行页面跳转
