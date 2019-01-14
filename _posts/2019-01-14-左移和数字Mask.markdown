@@ -5,10 +5,12 @@ date:   2019-01-14 12:11:30 +0800
 
 ---
 
-* MeasureSpec使用0x3 << 30作为MODE_MASK,如何保证正确性
+* 
+MeasureSpec使用0x3 << 30作为MODE_MASK
+mMeasuredHeight使用0x00ffffff作为MEASURED_SIZE_MASK
 
 
-1)移位操作(0x代表后面是16进制数字)
+1)移位操作(0x代表后面是16进制数字,移位操作类似乘法,花费更短的时间)
 ```
 0x3 >> 2 = 0
 0x3 >> 1 = 1
