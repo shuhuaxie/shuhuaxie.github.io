@@ -5,8 +5,7 @@ date:   2019-01-14 12:11:30 +0800
 
 ---
 
-* 
-MeasureSpec使用0x3 << 30作为MODE_MASK
+* MeasureSpec使用0x3 << 30作为MODE_MASK
 mMeasuredHeight使用0x00ffffff作为MEASURED_SIZE_MASK
 
 
