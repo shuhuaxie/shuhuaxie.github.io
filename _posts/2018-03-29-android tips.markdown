@@ -26,6 +26,13 @@ date:   2017-3-29 12:11:30 +0800
 2.LOAD_NO_CACHE 每次都请求html css js,并且返回200
 3.LOAD_CACHE_ELSE_NETWORK 每次都不请求html css js等静态资源,只请求普通get等
 
+* no toolchains found in the ndk
+$SDK$\ndk-bundle\toolchains
+
+mac下面可以用下面的命令
+ln -s arm-linux-androideabi-4.9 mipsel-linux-android
+
+window下可以拷贝粘贴重命名
 
 状态码:
 HTTP/1.1 204 No Content
@@ -38,4 +45,6 @@ expires: 10
 没有过期 则不发起 html 等资源文件请求
 过期则 发起资源文件请求,然后返回304.
 
+* google网址
 
+https://developer.android.google.cn/
