@@ -43,6 +43,9 @@ adb shell kill -3 2596
 6. 模拟器获取权限
 https://vimsky.com/article/3682.html
 
+7. targetSdkVersion如果出现降级不能覆盖安装
+https://www.jianshu.com/p/821daad893a6
+
 参考:
 http://www.daimami.com/javascript/228316.htm
 https://www.jianshu.com/p/3ce1b5e5a55e
