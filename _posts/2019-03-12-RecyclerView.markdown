@@ -35,6 +35,19 @@ date:   2019-03-12 12:11:30 +0800
          */
      private static final float SCROLL_FRICTION = 0.015f;
 
+9. mRecyclerView.mViewInfoStore
+    重要layout信息
+    ViewInfoStore 
+        mLayoutHolderMap
+        mOldChangedHolders
+        
+10. RecyclerViewDataObserver/AdapterDataObserver
+    adapter数据变化监听.
+    
+11. AdapterHelper
+
+12. ScrollingView
+
 
 
 

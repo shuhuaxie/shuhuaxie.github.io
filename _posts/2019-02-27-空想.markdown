@@ -18,6 +18,9 @@ date:   2019-02-27 12:11:30 +0800
 
 5. 从代码中抽取逻辑生成xmind,客户端,服务端,网页端(核心)
 
+6. 好用的录屏软件制作gif软件
+    https://github.com/NickeManarin/ScreenToGif
+
 参考: https://www.jianshu.com/p/d2d8856a78dd
 
 

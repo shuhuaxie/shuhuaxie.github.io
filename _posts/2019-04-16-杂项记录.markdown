@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "2019-04-16-杂项"
+date:   2019-04-16 12:11:30 +0800
+
+1. shadowsock 
+https://github.com/shadowsocks/ShadowsocksX-NG/releases/
+
+2. 让天下没有难读的源码
+
+3. 获取manifest 中的数据失败.
+
+
+
+
+
