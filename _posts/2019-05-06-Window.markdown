@@ -1,0 +1,91 @@
+---
+layout: post
+title:  "2019-05-06-Window"
+date:   2019-05-06 12:11:30 +0800
+
+* Activity 对应的contentView 会以DecorView为背景进行绘制
+
+* DecorView 能设置透明度吗?
+
+* android 状态栏是不是在window中?
+
+* WindowManager 和 WindowManagerService的数据传输格式
+
+* View 传递的数据 是固定的吗?
+    
+* surface 依附于 ViewRootImpl
+
+* WindowManager
+
+* fork之后如何加载app代码
+
+* 同一个Activity上面的Canvas 是同一个吗?
+
+* 同一个View多次绘制是同一个Canvas吗?
+
+* onDraw和onLayout执行在主线程.
+
+* canvas如何分发,开始会话区域如何偏移.
+
+* 每一个view 都有一个displayList,如何管理交互
+
+* RecycleView显示的内容
+
+dispatchDraw:使用ViewGroup的默认
+
+view缓存系统,view的绘制调用,cache的应用.
+
+* ViewGroup.dispatchDraw
+
+canvas对象传递,使子View内容重绘(重绘范围,缓存管理)
+
+* RenderNode每一个view有一个.(有一个long类型ID,其余都是native方法)
+
+* childview 
+
+如何添加?
+通过addView的方式能让ViewGroup识别,走到onLayout方法中,但是由于没有
+ViewHolder而会中间出错.
+正确的添加方式 既包含View本身,还要有ViewHold来保存状态
+
+childView的数量和显示的View数量相同.
+
+* private void addViewInt(View child, int index, boolean disappearing) {
+将view转换为展示状态,layout会将其考虑进来,进入childView列表
+
+* 跟Trace有关
+
+TraceCompat.beginSection(TRACE_CREATE_VIEW_TAG);
+
+* 为什么初始化的时候能看到7个Item,但是只create 4个;
+如果在bindView的时候 添加一个log,就变成了7个了!!!
+
+在有些手机上如果出现相同的log反复打印,会隐藏一部分;真实的item是7个.
+
+E/xie: onCreateViewHolder:...0
+E/xie: onCreateViewHolder:...0
+E/xie: onCreateViewHolder:...0
+E/xie: onCreateViewHolder:...0
+E/xie: __7
+E/xie: __7
+
+* CreateViewHolder的执行次数和什么有关.修改了一下总共执行11次.
+
+* onMeasure和View create的执行顺序.
+RecyclerView 的onMeasure中create itemView.
+
+* LayoutAnimationController
+dispatchDraw执行了什么动画
+
+参考文档:
+ https://blog.csdn.net/jinzhuojun/article/details/54234354
+ 
+ https://android.jlelse.eu/anatomy-of-recyclerview-part-1-a-search-for-a-viewholder-404ba3453714?gi=832dc3bb04f8
+
+    
+
+
+
+
+
+
