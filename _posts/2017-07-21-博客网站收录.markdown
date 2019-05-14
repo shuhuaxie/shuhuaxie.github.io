@@ -41,3 +41,6 @@ https://stackoverflow.com/questions/14124913/measure-android-app-startup-time
 
 * facebook
 https://code.fb.com/android/improving-facebook-s-performance-on-android-with-flatbuffers/
+
+* android技术
+https://www.jianshu.com/u/bb52a2918096
