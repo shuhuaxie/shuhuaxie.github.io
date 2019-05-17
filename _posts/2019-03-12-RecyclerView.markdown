@@ -48,6 +48,34 @@ date:   2019-03-12 12:11:30 +0800
 
 12. ScrollingView
 
+13. Recycler 和 RecycledViewPool
+
+addViewInt 
+证明:
+// view 在 childViews 列表中 (每次layout会带上它)
+// view 仅仅在缓存中 比如 ScrapViews(缺少View 找他要)
+
+
+1) 初步建立显示界面
+dispatchLayoutStep2()
+public void onLayoutChildren
+fill(RecyclerView.Recycler recycler, LayoutState layoutState,
+    循环语句while ((layoutState.mInfinite || remainingSpace > 0) && layoutState.hasMore(state)) {
+layoutChunk
+layoutState.next(recycler);
+recycler.getViewForPosition(mCurrentPosition);
+tryGetViewHolderForPositionByDeadline  
+    创建 holder = mAdapter.createViewHolder(RecyclerView.this, type);
+    绑定 tryBindViewHolderByDeadline(holder, offsetPosition, position, deadlineNs);
+创建View(onCreateViewHolder) 
+
+添加到child中 
+
+渲染(onBindViewHolder)
+
+2) View的缓存,复用和回收
+
+
 
 
 

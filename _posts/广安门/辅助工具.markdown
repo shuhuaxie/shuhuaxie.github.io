@@ -1,0 +1,6 @@
+1. JD - gui
+http://java-decompiler.github.io/
+
+2. android studio 源码大部分是开放的,可以通过修改源码的方式记录
+用户操作信息,以及idea的状态信息(打开了那个窗口等)
+
