@@ -13,7 +13,11 @@ date:   2019-05-20 12:11:30 +0800
         mVelocityTracker
         
 2) 滚动内容的实现
-scrollTo(mScrollX, mScrollY);
+    onLayout
+        scrollTo(mScrollX, mScrollY);
+
+示例: 
+https://github.com/shuhuaxie/nestScroll/blob/master/app/src/main/java/com/example/gs/testnestscroll/myview/CustomScrollView.java
 
 
 
