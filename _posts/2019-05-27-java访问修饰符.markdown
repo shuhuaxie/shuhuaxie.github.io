@@ -1,0 +1,42 @@
+---
+layout: post
+title:  "2019-05-27-java访问修饰符.markdown"
+date:   2019-05-27 12:11:30 +0800
+
+1. normal class 只有public和 default
+
+1)pulic 在内外部都能用
+
+2)default 
+
+只有同级包名才能创建和继承.
+
+不同包名如果想使用必须是由同级包名封装后暴露出来,
+类内部的方法和变量不能成为default和private以外的修饰符.
+public也会解释成default
+间接获得的default类对象不能使用其方法和变量.
+
+2. method 
+```
+Access Levels
+Modifier    Class   Package	Subclass	World
+public	    Y	    Y	    Y	        Y
+protected   Y	    Y	    Y	        N
+no modifier Y	    Y	    N	        N
+private	    Y	    N	    N	        N
+```
+
+3. inner class
+
+受default class的访问类型限制.
+static 只能修饰innerclass.
+在public class内,类方法和成员变量的访问类型意义和外部class相同.
+内部类和外部类的私有方法可以任意调用.
+内部类可以无限嵌套.
+
+继承的类 能不能修改访问限制符?
+能,但是只能更加放开访问限制,private不能继承也不能修改.
+
+
+
+
