@@ -62,22 +62,39 @@ public void onLayoutChildren
 fill(RecyclerView.Recycler recycler, LayoutState layoutState,
     循环语句while ((layoutState.mInfinite || remainingSpace > 0) && layoutState.hasMore(state)) {
 layoutChunk
+    子View layout:this.layoutDecoratedWithMargins(view, left, top, right, bottom);
+           child.layout
 layoutState.next(recycler);
+    添加到布局中 addView
 recycler.getViewForPosition(mCurrentPosition);
 tryGetViewHolderForPositionByDeadline  
     创建 holder = mAdapter.createViewHolder(RecyclerView.this, type);
     绑定 tryBindViewHolderByDeadline(holder, offsetPosition, position, deadlineNs);
-创建View(onCreateViewHolder) 
 
-添加到child中 
+删除View
+removeAndRecycleViewAt
+  this.removeViewAt(index);
 
-渲染(onBindViewHolder)
+mAttachedScrap
+
+mChangedScrap
+
+mCachedViews
+
+mUnmodifiableAttachedScrap
+
+mRecyclerPool
 
 2) View的缓存,复用和回收
 
+onLayoutChildren
+
+detachAndScrapAttachedViews
 
 
 
+//fill 在简单滚动(View内容不变)会不会调用
+// 简单滚动 事件传递(scrollBy)
 
 
 
