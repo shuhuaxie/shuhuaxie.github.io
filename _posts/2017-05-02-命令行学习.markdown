@@ -185,4 +185,18 @@ SELECT * FROM `information_schema`.`PROCESSLIST` p WHERE p.`HOST` LIKE '%10.28.1
 /etc/profile，/etc/bashrc 是系统全局环境变量设定
 ~/.profile，~/.bashrc用户家目录下的私有环境变量设定
 
+* ps -A 连接android虚拟机查看进程信息
+u0_a30        2617  1901 3699092 162952 0                   0 S com.android.launcher3
+u0_a55        2661  1901 3559996  78624 0                   0 S com.android.printspooler
+system        2679  1901 3558280  76188 0                   0 S com.android.keychain
+u0_a46        2706  1901 3566412  87908 0                   0 S com.android.calendar
+u0_a7         2736  1901 3559312  86300 0                   0 S com.android.providers.calendar
+u0_a58        2769  1901 3570360  91868 0                   0 S com.android.email
+u0_a33        2799  1901 3558520  78504 0                   0 S com.android.managedprovisioning
+u0_a66        2819  1901 3569736  99860 0                   0 S com.android.messaging
+* ps --help
+帮助
+
+* ps -T -p 2617 查看某个进程的全部线程信息
+
 

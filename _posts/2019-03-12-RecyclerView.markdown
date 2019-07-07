@@ -86,6 +86,32 @@ mUnmodifiableAttachedScrap
 mRecyclerPool
 
 2) View的缓存,复用和回收
+Recycler
+    mAttachedScrap
+    mChangedScrap
+    mCachedViews
+    mRecyclerPool
+    
+    getViewForPosition 
+    bindViewToPosition // 将指定View绑定到指定位置
+    
+    convertPreLayoutPositionToPostLayout
+    
+    recycleView
+    clear
+    
+    getScrapList
+    setViewCacheSize
+3) 优化
+
+① setHasFixedSize 
+
+在item高和宽不变的情况下,可以设置后节省时间.(只能notifyItem***生效)
+
+另: notifyDataSetChanged 在子线程不能正确刷新
+
+
+    
 
 onLayoutChildren
 
