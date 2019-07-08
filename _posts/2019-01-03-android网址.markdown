@@ -16,3 +16,6 @@ https://developer.android.com/studio/command-line/systrace
 * 博客
 
 https://github.com/jeanboydev
+
+* 源码
+https://android.googlesource.com/platform/frameworks/support/+/247185b98675b09c5e98c87448dd24aef4dffc9d/v7/recyclerview/src/android/support/v7/widget/RecyclerView.java
