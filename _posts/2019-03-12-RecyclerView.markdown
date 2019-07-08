@@ -96,7 +96,12 @@ Recycler
 
 在item高和宽不变的情况下,可以设置后节省时间.(只能notifyItem***生效)
 
-另: notifyDataSetChanged 在子线程不能正确刷新
+另: 
+notifyDataSetChanged 在子线程不能正确刷新
+
+RecycleView嵌套EditText会出现滚动的情况,需要为父View设置参数
+    android:focusable="true"
+    android:focusableInTouchMode="true"
 
 
     

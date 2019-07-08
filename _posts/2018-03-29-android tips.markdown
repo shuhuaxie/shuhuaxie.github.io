@@ -48,3 +48,8 @@ expires: 10
 * google网址
 
 https://developer.android.google.cn/
+
+* please select Android SDK
+My Problem: "please select Android SDK", But everything is okey :( -> I think one of IntelliJ file was crashed (after blue screen of death)
+My resolution:
+File -> Settings -> Android SDK -> Android SDK Location Edit -> Next, Next (Android SDK is up to date.), Finished

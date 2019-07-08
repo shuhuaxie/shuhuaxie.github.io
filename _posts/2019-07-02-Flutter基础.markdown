@@ -1,0 +1,50 @@
+---
+layout: post
+title:  "2019-07-02-Flutter基础"
+date:   2019-07-02 12:11:30 +0800
+
+1. 构建简易界面
+    1) 基本UI:
+        Text/TextField/Image/FlatButton/IconButton
+    2) 控件:
+        Row/Column/Stack/ListView/PageView/SingleChildScrollView+ListBody
+    3) 界面修饰(需要使用其他Widget嵌套)
+        边界/背景/尺寸/旋转 Container
+        Weight Expanded
+        外部对齐: mainAxisAlignment/Container alignment/Align
+        内部对齐: crossAxisAlignment
+        占满全部父控件:固定搭配可以用double.infinity,
+                      非固定搭配(方法获取)需要标记尺寸
+    4) 点击 
+        GestureDetector
+        Widget内嵌onPressed(FlatButton)
+    5) 弹框
+        AlertDialog
+2. 使用statefulwidget
+// LiveData与ViewModel 是基于观察者模式
+// statefulwidget是基于规约,类似于notifyDataChange,setState执行build方法
+statefulwidget的值可以通过构造函数传递.
+
+3. Dart语法
+    1) 语法糖: 
+    ```
+    // 单方法嵌套缩写
+    main() => runApp(MyApp());
+    //    ↓
+    void main(){
+        runApp(MyApp());
+    }
+    ```
+    2) 构造函数
+    LeftButtons({Key key, this.clickItem}) : super(key: key);
+    
+4. 代码习惯
+    1) 对象包对象形成布局,因为对齐修饰等方法增加嵌套,所以比Android层次更深.
+    2) 设计模式,最小化statefulwidget,将值传递过去.
+    3) 右侧有快速包含快捷键(居中,间距,容器)Flutter outline
+5. 其他
+    出错会直接打印到屏幕上,更容易发生空指针异常.
+
+
+
+

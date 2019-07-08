@@ -44,3 +44,6 @@ https://code.fb.com/android/improving-facebook-s-performance-on-android-with-fla
 
 * android技术
 https://www.jianshu.com/u/bb52a2918096
+
+* 设计模式等
+https://www.runoob.com
