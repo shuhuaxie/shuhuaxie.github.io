@@ -27,4 +27,6 @@ sudo yum install -y qemu-kvm android-tools libstdc++.i686 zlib.i686
 
 7. 重启CentOs使以上安装操作生效
 
-13. ./studio.sh
+13. ./studio.sh(cd /opt/android-studio/bin/)
+如果没有显示屏,会出错
+Startup Error: Unable to detect graphics environment
