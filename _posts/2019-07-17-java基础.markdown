@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "2019-07-17-java基础.markdown"
+date:   2019-07-17 12:11:30 +0800
+
+1. |=
+PFLAG_MEASURED_DIMENSION_SET = 0x00000800;
+mPrivateFlags |= PFLAG_MEASURED_DIMENSION_SET;// 将改标记位置为已修改.
+常用于标记位处理,表示将标记位置为1.
+
+2. measure 原理
+1) 先将标记位置空
+mPrivateFlags &= ~MEASURED_DIMENSION_SET;
+2) 预设函数setMeasuredDimensionRaw中将标记位置为1.
+3) 在onMeasure的回调结束后检查标记位是否置1,否则报错.
+
