@@ -1,3 +1,9 @@
+---
+layout: post
+title:  "2019-07-31-MockDialogAndPhoneWindow.markdown"
+date:   2019-07-31 12:11:30 +0800
+
+
 本项目以Window为基础,以AlertDialog源码和PhoneWindow为原型,用简化的方式
 完成AlertDialog的各项功能,源码已上传到github:https://github.com/shuhuaxie/MockDialogAndPhoneWindow.
 脑图网址:http://naotu.baidu.com/file/ef8c63e1523ba6fd81af3eef2fc7497a?token=92a6474c6631b4ee (建议在电脑上阅读)

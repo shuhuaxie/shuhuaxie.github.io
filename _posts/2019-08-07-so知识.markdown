@@ -1,0 +1,20 @@
+---
+layout: post
+title:  "2019-08-07-so知识.markdown"
+date:   2019-08-07 12:11:30 +0800
+
+1. ABI
+Application binary interface
+是cpu能接受的二进制接口,跟cpu架构有关.常见的cpu架构有arm,x86,mips.
+他们内部还有64位和32位的区分.
+
+2. cpu一般都支持两种ABI
+主要 ABI：与系统本身使用的原生代码一样，最优方案。
+辅助 ABI：支持的另一个 ABI 方案，兼容方案
+
+3. 每一个so文件对应一种abi,同一个app在运行时只支持同一种abi
+所以,如果需要提供多套 ABIs 的支持，就需要保证所有 ABI 目录下，对应的 so 文件保持一致。
+
+4. gradle可以设置abifilter,仅打包某些abi.对于不能匹配的手机和apk
+会提示安装出错.如果在某中abi中存在so缺失,则会在运行时报错.
+很多第三方工具可能只支持部分so,不能满足app需求.
