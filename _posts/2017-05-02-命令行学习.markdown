@@ -11,6 +11,9 @@ du -h -d 1 debug.14.log <br>
 * 压缩
 tar czvf mydb.tar tmp8_28mydb.sql
 
+* 解压
+tar -xf LibVNCServer-0.9.9.tar.gz
+
 * ls 命令
 ll
 ls -lht 文件按照时间排序

@@ -47,3 +47,6 @@ https://www.jianshu.com/u/bb52a2918096
 
 * 设计模式等
 https://www.runoob.com
+
+* android技术
+http://gityuan.com/archive/
