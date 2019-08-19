@@ -8,6 +8,9 @@ date:   2019-08-07 12:11:30 +0800
 1) UI性能
 adb shell dumpsys gfxinfo com.android.launcher3
 
+重要指标 
+ 显示界面重绘频率,在界面更新不频繁的情况下,值比较小 Total frames rendered: 156.
+ 绘制效率,在频率比较高的时候,显示平均绘制效率,一般关注高于16ms的是否过多:Janky frames: /50th percentile: 
 2. 通用
 1) 进程列表
  adb shell ps -ef
