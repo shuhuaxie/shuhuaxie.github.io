@@ -1,0 +1,11 @@
+1. 网络资源搜索
+
+https://www.baiyu.tech/
+
+2. 书籍资源
+
+http://www.java1234.com/
+
+3. java规范
+
+https://docs.oracle.com/javase/specs/

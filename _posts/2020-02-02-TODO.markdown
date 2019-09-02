@@ -23,5 +23,12 @@ ImageView
 background
 动画
 
+java语言规范+java虚拟机规范
+
+
+心理建设
+人生葵花宝典
+https://www.jianshu.com/p/ef7e2c02dcfd
+
 
 
