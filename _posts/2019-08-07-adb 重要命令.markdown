@@ -14,3 +14,4 @@ adb shell dumpsys gfxinfo com.android.launcher3
 2. 通用
 1) 进程列表
  adb shell ps -ef
+2) wm density 像素密度; wm size 屏幕尺寸
