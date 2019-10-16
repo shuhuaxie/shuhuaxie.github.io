@@ -30,7 +30,7 @@ FFmpeg 是视频编解码和编辑框架,同时支持解封装绝大多种视频
 1)命令行工具
 * ffmpeg
 
-可以从摄像头和麦克风等工具获取视频文件,也可以对视频文件进行格式转换,帧率修改,视频剪辑合并,加入字幕滤镜等操作.
+可以从摄像头和麦克风等工具或者网络和文件获取视频内容,也可以对视频内容进行格式转换,帧率修改,视频剪辑合并,加入字幕滤镜等操作.
 * ffplay
 
 ffmpge的测试播放工具,支持各种播放调试参数和常用播放设置
@@ -121,5 +121,6 @@ Input #0, flv, from 'http://pl3.live.chongdingdahui.com/cddh/online.flv':
 http://ffmpeg.org/doxygen/trunk/group__lavf__decoding.html#ga31d601155e9035d5b0e7efedc894ee49
 * 支持联网传输格式
 http://ffmpeg.org/general.html#Network-Protocols
+https://blog.csdn.net/HAOMCU/article/details/7072707
 
 
