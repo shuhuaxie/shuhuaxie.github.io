@@ -1,0 +1,41 @@
+---
+layout: post
+title:  "2019-11-08- ios文件管理.markdown"
+date:   2019-11-08 12:11:30 +0800
+
+1. IOS中App的文件管理
+func say1(_ s:String) -> Void { print(s) }
+func say2(_ s:String) -> () { print(s) }
+func say3(_ s:String) { print(s) }
+
+2. NSSearchPathForDirectoriesInDomains
+所以通常使用Documents目录进行数据持久化的保存，而这个Documents目录可以通过：
+
+NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserdomainMask，YES) 得到。
+/Users/apple/Library/Application Support/iPhone Simulator/4.3/
+Applications/550AF26D-174B-42E6-881B-B7499FAA32B7/Documents
+3. NSString *destPath = NSHomeDirectory();
+/Users/apple/Library/Application Support/iPhone Simulator/4.3/
+Applications/550AF26D-174B-42E6-881B-B7499FAA32B7
+4. 文件管理
+NSFileManager* fm=[NSFileManager defaultManager];
+
+5. 文件的沙盒机制
+iOS应用程序只能在为该改程序创建的文件系统中读取文件，不可以去其它地方访问，此区域被成为沙盒，
+所以所有的非代码文件都要保存在此，例如图像，图标，声音，映像，属性列表，文本文件等。
+    1、每个应用程序都有自己的存储空间
+    2、应用程序不能翻过自己的围墙去访问别的存储空间的内容
+    3、应用程序请求的数据都要通过权限检测，假如不符合条件的话，不会被放行。
+
+6. 每个沙盒含有3个文件夹：Documents, Library 和 tmp
+Documents会被ios系统备份
+NSString * docpath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]; //Documents目录
+NSString * libpath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject]; //Library目录
+NSString * tmp = NSTemporaryDirectory();//tmp目录
+
+参考：
+https://blog.csdn.net/xingxing513234072/article/details/24184917
+https://www.jianshu.com/p/e736c4065ffc
+ 
+ 
+    

@@ -1,0 +1,81 @@
+---
+layout: post
+title:  "2019-11-07- ios语法.markdown"
+date:   2019-11-07 12:11:30 +0800
+
+1. 闭包/匿名内部类的演化
+func say1(_ s:String) -> Void { print(s) }
+func say2(_ s:String) -> () { print(s) }
+func say3(_ s:String) { print(s) }
+
+2. 带上in
+{
+    () -> () in
+    self.myButton.frame.origin.y += 20
+}
+{
+    (finished:Bool) -> () in
+    print("finished: \(finished)")
+}
+
+let image = imageOfSize(CGSize(width:45, height:20), {
+    () -> () in
+    let p = UIBezierPath(
+        roundedRect: CGRect(x:0, y:0, width:45, height:20),
+        cornerRadius: 8)
+    p.stroke()
+})
+
+UIView.animate(withDuration:0.4, animations: {
+    self.myButton.frame.origin.y += 20
+    }, completion: {
+        (finished:Bool) in
+        print("finished: \(finished)")
+})
+
+UIView.animate(withDuration:0.4, animations: {
+    self.myButton.frame.origin.y += 20
+    }, completion: {
+        (finished) in
+        print("finished: \(finished)")
+})
+
+UIView.animate(withDuration:0.4, animations: {
+    self.myButton.frame.origin.y += 20
+    }, completion: {
+        finished in
+        print("finished: \(finished)")
+})
+
+UIView.animate(withDuration:0.4, animations: {
+    self.myButton.frame.origin.y += 20
+    }, completion: {
+        print("finished: \($0)")
+})
+
+UIView.animate(withDuration:0.4, animations: {
+    self.myButton.frame.origin.y += 20
+    }, completion: {
+        _ in
+        print("finished!")
+})
+
+let arr = [2, 4, 6, 8]
+let arr2 = arr.map ({
+    (i:Int) -> Int in
+    return i*2
+})
+3. [weak self] 将
+    func method2() {
+        //解决方式二:  在swift中 有特殊的写法  [weak self]
+        loadData { [weak self] (dataString) -> () in
+
+            //以后在闭包中中 使用self 都是若引用的
+            print("\(dataString) \(self?.view)")
+        }
+    }
+ 
+ 参考：
+ https://www.jianshu.com/p/42c09c4bf6de
+ https://medium.com/anysuggestion/preventing-memory-leaks-with-swift-compile-time-safety-49b845df4dc6
+    
