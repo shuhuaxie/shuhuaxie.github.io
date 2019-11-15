@@ -9,3 +9,9 @@ http://www.java1234.com/
 3. java规范
 
 https://docs.oracle.com/javase/specs/
+
+4. 工具网址
+文案在线编辑：https://www.yuque.com/
+
+5. 外包网站
+http://www.51waibao.net/

@@ -1,0 +1,39 @@
+---
+layout: post
+title:  "2019-11-11- ios网络请求.markdown"
+date:   2019-11-11 12:11:30 +0800
+
+1. 对象映射(IFLBaseModel)
+每一层对象都要继承HandyJSON
+需要空的init
+特点:JSON转Model一步到位
+
+```
+import Foundation
+import HandyJSON
+
+class IFLBaseModel: HandyJSON {
+    required init() {
+
+    }
+
+}
+```
+
+https://www.jianshu.com/p/e9d933ce7c74
+
+2. 网络请求和其他耗时代码在ios中的正确用法
+Swift 网络请求 : Moya使用理解+Alamofire
+
+3. 图片请求
+SDWebImage
+
+4. Json
+HandyJSON + SwiftyJSON
+
+https://www.jianshu.com/p/219b197a230a
+
+
+ 
+ 
+    

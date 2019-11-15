@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "2019-11-12- 看不懂的语法.markdown"
+date:   2019-11-12 12:11:30 +0800
+
+1.
+```
+if case let .success(response) = result {
+
+```
+为什么 .success(response) = result
+左边的会产生一个地址，右边把地址给替换掉，这有什么意义？
+2. IFLOrderSlideTitleP
+IFLAPIHelper.request(ifl: .gorderfstl, netUnReacheable: {
+}
+.gorderfstl 能直接使用？
+.是必须的吗？
+
+ 
+ 
+    
