@@ -1,0 +1,44 @@
+---
+layout: post
+title:  "2019-11-10- IOS项目开发.markdown"
+date:   2019-11-10 12:11:30 +0800
+
+1. 更改app名称
+1) 直接改info.plist bundle name
+2) 更改项目设置General中的display name
+2. 在项目中安装pod
+pod init/install
+3. 在项目中显示pod
+重新open xcworkspace而不是xcodeproj
+4. 正常的创建xcode项目
+https://www.jianshu.com/p/a78a1b09e2c6
+5. 日志打印
+print("hellow")
+6. 网络请求
+Alamofire
+7. swift和object互相引用
+1) swift调用oc
+build-setting中设置Object-c bridging header
+为带有ob的头文件.
+2) oc调用swift
+如果找不到头文件,请直接在build-setting中直接设置
+如果引入swift的头文件后,不能使用类或者方法,请检查引入的.h文件
+是否有你想要的声明,注意需要导入的类和方法需要使用@objc声明
+另外swift对象需要继承NSObject
+8. 判断是否是主线程
+Thread.isMainThread
+
+
+https://www.jianshu.com/p/f860fe1718ca
+https://www.cnblogs.com/qingche/p/4664819.html
+https://blog.csdn.net/sinat_21886795/article/details/79420084
+
+
+
+https://www.imooc.com/qadetail/80225
+
+
+
+ 
+ 
+    

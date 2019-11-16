@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "2019-11-10- IOS项目 oc.markdown"
+date:   2019-11-10 12:11:30 +0800
+
+1. oc块对象
+
+void (^a)(int) = ^(int i){ printf("%d\n",i); }
+a(5);
+a(6 * 2);
+2. oc打印
+
+• %@ 对象
+• %d, %i 整数
+
+https://www.cnblogs.com/langtianya/p/3936230.html
+https://www.jianshu.com/p/c1201555ce96
+
+
+
+
+
+
+
+
+
+ 
+ 
+    

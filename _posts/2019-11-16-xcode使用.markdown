@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "2019-11-16-xcode使用.markdown"
+date:   2019-11-16 12:11:30 +0800
+
+1. 打开多个窗口或者标签
+快捷键 ： command + T
+
+2. 打开方法
+ctrl + 6
+
+
+
+
+
+ 
+ 
+    
