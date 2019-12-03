@@ -29,6 +29,22 @@ Widget getClipRRectWidget(double border, double radius, Widget child,
   );
 }
 ```
- 
+3. ListView/GridView不能居顶放置,增加下面的配置
+```
+padding: EdgeInsets.only(top: 0)),
+```
+4. hintText没有居中展示
+在hinttext的inputdecoration 的contentPadding字段里加上一些约束，比如padding之类的，再微调就好了。
+5. The method 'drive' was called on null
+1) 错误示范
+onTap: toPayPage(context),
+2) 正确示范
+onTap: () => {toPayPage(context)},
+3) 原因
+onTap不能使用一个空函数,它需要一个闭包
+4) 表现
+如果B页面有错误的onTap声明,从A->B会报The method 'drive' was called on null 错误
+
+6. flutter 不能预览widget,有点影响效率
  
     
