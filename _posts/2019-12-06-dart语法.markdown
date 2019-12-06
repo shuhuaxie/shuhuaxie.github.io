@@ -1,0 +1,39 @@
+---
+layout: post
+title:  "2019-12-06-dart语法.markdown"
+date:   2019-12-06 12:11:30 +0800
+
+1. with mixin on
+// with 类似于 extend,他是以组合的形式将各个功能结合到一块
+// with 是实体类和mixin类的连接符号.使用了with的实体类,不能被再次with
+```
+class WidgetsFlutterBinding with GestureBinding, RendererBinding {
+  void hitTest() {
+    print("WidgetsFlutterBinding.hitTest");
+    super.hitTest();
+  }
+}
+
+mixin GestureBinding {
+  void hitTest() {
+    print("GestureBinding.hitTest");
+  }
+}
+// on 用于连接mixin类,也有类似于extend的super.hitTest()功能.
+// super可以在实体类和mixin上依次传播执行.
+
+mixin RendererBinding on GestureBinding {
+  void hitTest() {
+    print("RendererBinding.hitTest");
+    super.hitTest();
+  }
+}
+```
+WidgetsFlutterBinding.hitTest
+RendererBinding.hitTest
+GestureBinding.hitTest
+
+
+
+ 
+    
