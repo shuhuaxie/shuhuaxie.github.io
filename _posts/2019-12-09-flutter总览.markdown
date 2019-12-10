@@ -1,0 +1,34 @@
+---
+layout: post
+title:  "2019-12-09-flutter总览.markdown"
+date:   2019-12-09 12:11:30 +0800
+
+1. 概述
+Flutter 是Fuchisa操作系统的UI层部分,主要开发语言是dart.
+目前可以用在移动开发和Web开发.
+我们经常使用的移动端flutter一般  包括 嵌入层 引擎层 和 UI框架层.
+2. 嵌入层是平台相关的.在android中包含 flutter sdk,flutterView
+
+3. dart
+是一种面向对象,可以以AOT或jit方式运行的语言
+
+dart有独特的多线程机制,
+他的异步多任务需要使用isolate.isolate不能共享内存,也不能共享变量,内部只使用消息进行通讯.
+优点是避免了锁,缺点是不能共享内存会导致内存增加.
+
+
+
+Embedder 是一个嵌入层，主要功能为渲染 Surface，线程设置，插件等。
+Flutter 的平台层很低，比如 iOS 只是提供一个画布，剩余的所有渲染相关的逻辑
+都在 Flutter 内部，而这就是 Flutter 所宣传的可以精准控制每一个像素的原因；
+但不可否认，对于插件部分，还是需要特定操作系统底层的建设（比如支付、地图等）。
+
+Engine 层使用 C++ 实现，这一层包含 Skia，Dart 和 Text。Skia，Flutter
+系统的图形渲染库。提供了适用于多种软/硬件平台的通用 API；Dart 可能包含 Dart
+Runtime 等（JIT(动态编译)/AOT(静态编译)），Text 则负责文字渲染部分。
+
+Framework 层是框架使用者需要直接面对的，包含文本/图片/按钮等基础 Widgets、渲染、动画、手势等。
+
+ 
+ 
+    
