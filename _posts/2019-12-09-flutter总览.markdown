@@ -16,7 +16,8 @@ dart有独特的多线程机制,
 他的异步多任务需要使用isolate.isolate不能共享内存,也不能共享变量,内部只使用消息进行通讯.
 优点是避免了锁,缺点是不能共享内存会导致内存增加.
 
-
+4. flutter文章
+https://medium.com/dartlang/dart-asynchronous-programming-isolates-and-event-loops-bffc3e296a6a
 
 Embedder 是一个嵌入层，主要功能为渲染 Surface，线程设置，插件等。
 Flutter 的平台层很低，比如 iOS 只是提供一个画布，剩余的所有渲染相关的逻辑
