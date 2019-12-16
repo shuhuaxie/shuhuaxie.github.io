@@ -1,0 +1,24 @@
+---
+layout: post
+title:  "2019-12-16-面试准备.markdown"
+date:   2019-12-13 12:11:30 +0800
+
+通俗+干货
+1. flutter各层的简单介绍
+2. dart特点介绍
+可以native运行;
+with,mixin,on;
+extension on;
+语言特性
+	提几个重要的
+Effective Dart
+	AVOID defining a one-member abstract class when a simple function will do.
+	AVOID defining a class that contains only static members.
+
+https://dart.dev/guides/language/effective-dart/design#do-use-terms-consistently
+3. android启动等知识和最近版本更新
+recycleView模仿
+
+ 
+ 
+    
