@@ -6,14 +6,31 @@ date:   2019-12-13 12:11:30 +0800
 通俗+干货
 1. flutter各层的简单介绍
 2. dart特点介绍
+# 语法
+.. 操作符/空指针优化
 可以native运行;
 with,mixin,on;
 extension on;
+函数可以通过typeDef简化
 语言特性
+# 线程设计
 	提几个重要的
 Effective Dart
 	AVOID defining a one-member abstract class when a simple function will do.
 	AVOID defining a class that contains only static members.
+	AVOID type annotating initialized local variables
+	// 多使用var
+	List<List<Ingredient>> possibleDesserts(Set<Ingredient> pantry) {
+      var desserts = <List<Ingredient>>[]; // var one
+      for (var recipe in cookbook) { // var two
+        if (pantry.containsAll(recipe)) {
+          desserts.add(recipe);
+        }
+      }
+
+      return desserts;
+    }
+
 
 https://dart.dev/guides/language/effective-dart/design#do-use-terms-consistently
 3. android启动等知识和最近版本更新
