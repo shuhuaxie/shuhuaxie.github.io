@@ -33,6 +33,11 @@ part of dart.collection;
 
 2. 关键字
 part of,show ,hide ,as
+
+3. private访问权限
+_ 代表private;
+A declaration m is accessible to a library L if m is declared in L or if m is public.
+正常情况下一个文件会视为一个library.跨文件直接不能使用private字段.
  
  
     
