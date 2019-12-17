@@ -11,12 +11,18 @@ date:   2019-12-16 12:11:30 +0800
 可以native运行;
 with,mixin,on;
 extension on;
-函数也是对象可以通过typeDef简化
+assert
 
 # 优化使用
 单接口优先使用Function
+函数也是对象可以通过typeDef简化
 Function 优于 dynamic
 PREFER inline function types over typedefs.
+DO override hashCode if you override ==
+// the default behavior for == is identity,
+// Any two objects that are equal must have the same hash code.
+// Otherwise, maps and other hash-based collections
+// will fail to recognize that the two objects are equivalent
 语言特性
 # 线程设计
 	提几个重要的
