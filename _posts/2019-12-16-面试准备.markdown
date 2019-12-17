@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "2019-12-16-面试准备.markdown"
-date:   2019-12-13 12:11:30 +0800
+date:   2019-12-16 12:11:30 +0800
 
 通俗+干货
 1. flutter各层的简单介绍
@@ -11,7 +11,12 @@ date:   2019-12-13 12:11:30 +0800
 可以native运行;
 with,mixin,on;
 extension on;
-函数可以通过typeDef简化
+函数也是对象可以通过typeDef简化
+
+# 优化使用
+单接口优先使用Function
+Function 优于 dynamic
+PREFER inline function types over typedefs.
 语言特性
 # 线程设计
 	提几个重要的
