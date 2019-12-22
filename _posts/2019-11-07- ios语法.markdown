@@ -124,9 +124,30 @@ var path: String {
             return "/product-center/v1/product/app/list"
         }
     }
+13. 带可选项的字符串的拼接
+let name = "王红庆"
+let age = 18
+let title: String? = "iOS开发大菜逼"
+    
+// 下面这样写会报警告:String interpolation produces a debug description for an optional value; did you mean to make this explicit?
+let str = "\(name)\(age)\(title)"
+/**
+ * 解决'警告'和输出'Optional'的办法
+ * 1.对'title'强行解包(这里不推荐不推荐)--->(title!)
+ * 2.使用'??'-------------------------->(title ?? "")
+ */
+let str = "\(name)\(age)\(title!)"      // 输出:王红庆18iOS开发大菜逼
+let str = "\(name)\(age)\(title ?? "")" // 输出:王红庆18iOS开发大菜逼
+print(str)                              // 输出:王红庆18Optional("iOS开发大菜逼")
+
+14. 类名,字符串声明
+  fileprivate func nibName() -> String {
+    return String(describing: type(of: self))
+  }
 
  参考：
  https://www.jianshu.com/p/42c09c4bf6de
  https://medium.com/anysuggestion/preventing-memory-leaks-with-swift-compile-time-safety-49b845df4dc6
  https://blog.csdn.net/qq_30932479/article/details/80517518
  https://www.jianshu.com/p/3f9af8946b61
+ 

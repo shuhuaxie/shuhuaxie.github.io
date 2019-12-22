@@ -10,6 +10,22 @@ date:   2019-11-16 12:11:30 +0800
 ctrl + 6
 
 
+3. 编译问题
+/Users/xie/Library/Developer/Xcode/DerivedData/SHSettle-grxorgenoeveukejdolrcvslvzah/Build/Intermediates.noindex/SHSettle.build/Debug-iphonesimulator/SHSettle.build/Script-FA5F6E83221FD7F3001DA56A.sh: 
+line 39: /packages/flutter_tools/bin/xcode_backend.sh: No such file or directory
+
+修改:选中TARGETS / SHSettle / Build Phases / Run Script
+将 xcode_backend.sh的地址修改为本地地址.
+
+https://www.jianshu.com/p/8072d4a1540b
+
+在加载app时，会首先读取LaunchScreen.storyboard中的内容，
+
+在app加载到内存之后，自动读取man.storyboard里的初始视图控制器，
+
+替换原来的LaunchScreen.storyboard中的内容。
+
+使用SingleViewApplication 模板创建的应用程序在默认情况下会创建一个Main.storyboard。
 
 
 
