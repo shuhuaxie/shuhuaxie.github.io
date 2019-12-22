@@ -80,6 +80,11 @@ let arr2 = arr.map ({
 5. guard
 guard可以把不符合条件的处理事件前置，以免程序猿在开发中有遗漏的情况出现。
 guard还可以减少条件语句中的嵌套数量，使代码更简洁易读。
+
+Swift规定，guard - else必须同时出现，而且，else中，必须进行return。
+这就保证了我们不会漏掉return，同时，guard条件本身也是正相关：如果条件成立则执行下一步。
+这符合我们的思维习惯，相比之下， if ！
+则需要我们对条件进行一个非转换，和我们的思维习惯不合。这里体现了guard - else的优势。
 6. class func
 表示静态方法,同static func
 Swift中static func 相当于class final func。禁止这个方法被重写。
@@ -124,6 +129,7 @@ var path: String {
             return "/product-center/v1/product/app/list"
         }
     }
+
 13. 带可选项的字符串的拼接
 let name = "王红庆"
 let age = 18
@@ -145,9 +151,41 @@ print(str)                              // 输出:王红庆18Optional("iOS开发
     return String(describing: type(of: self))
   }
 
+13. if let 解包,省略为空判断
+if let aProp = self.prop{
+    ...其他更多的操作
+}
+// 强制类型转换
+if let  typeAObj = typeBObj as? typeA{
+     // 如果能够转换成功，那么typeAObj就是强转后的对象
+     ....
+}else {
+     // 转化失败，这里一般不会做处理
+}
+
+14. if case .xx= xxx 简化switch case,适用于判断单个case类型
+let myBrand = CarBrand.BMW
+if case .BMW = myBrand{
+   print("宝马")
+}
+// if case let
+let myCar = CarBrand.BMW(name: "宝马",Production: "德国")
+switch myCar {
+  case let CarBrand.BMW(name, Production):
+    print("This car named \(name)，from\(Production)")
+  default: () // 不做任何处理
+}
+简化为:
+let myBrand = CarBrand.BMW(name: "宝马",Production: "德国")
+ if case let CarBrand.BMW(name, Production) = myBrand{
+     print("\(name),\(Production)")
+}
+
  参考：
  https://www.jianshu.com/p/42c09c4bf6de
  https://medium.com/anysuggestion/preventing-memory-leaks-with-swift-compile-time-safety-49b845df4dc6
  https://blog.csdn.net/qq_30932479/article/details/80517518
  https://www.jianshu.com/p/3f9af8946b61
- 
+
+ https://www.jianshu.com/p/3a9fbeef56a1?utm_source=oschina-app
+

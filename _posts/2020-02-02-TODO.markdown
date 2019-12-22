@@ -26,9 +26,19 @@ background
 java语言规范+java虚拟机规范
 
 
+dart多线程机制,通讯原理
+binding流程,
+Render层能不能有直接的child关系,是不是只能借助于Widget
+Widget生命周期
+
 心理建设
 人生葵花宝典
 https://www.jianshu.com/p/ef7e2c02dcfd
+
+全知全能 - 神机妙算
+揭示万事万物的普遍联系和变化规律,能够看到别人看不到的,预测别人预测不到的.
+王沪宁 栗战书
+http://news.cri.cn/gb/42071/2015/09/29/8391s5119187_1.htm
 
 
 

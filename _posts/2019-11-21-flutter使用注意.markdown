@@ -1,0 +1,50 @@
+---
+layout: post
+title:  "2019-11-21-flutter使用注意.markdown"
+date:   2019-11-21 12:11:30 +0800
+
+1. 空白区域不能捕捉点击事件
+使用GestureDetector包裹Container，发现在Container内容为空的区域点击时，捕捉不到onTap点击事件。
+解决方案：在GestureDetector里面添加属性：
+behavior: HitTestBehavior.opaque
+2. 圆角边框
+```
+Widget getClipRRectWidget(double border, double radius, Widget child,
+    Color outerColor, Color innerColor, double outWidth, double outHeight) {
+  return ClipRRect(
+    borderRadius: BorderRadius.circular(radius),
+    child: Container(
+      color: outerColor,
+      width: outWidth,
+      height: outHeight,
+      padding: EdgeInsets.all(border),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(radius - border),
+        child: Container(
+          color: innerColor,
+          child: child,
+        ),
+      ),
+    ),
+  );
+}
+```
+3. ListView/GridView不能居顶放置,增加下面的配置
+```
+padding: EdgeInsets.only(top: 0)),
+```
+4. hintText没有居中展示
+在hinttext的inputdecoration 的contentPadding字段里加上一些约束，比如padding之类的，再微调就好了。
+5. The method 'drive' was called on null
+1) 错误示范
+onTap: toPayPage(context),
+2) 正确示范
+onTap: () => {toPayPage(context)},
+3) 原因
+onTap不能使用一个空函数,它需要一个闭包
+4) 表现
+如果B页面有错误的onTap声明,从A->B会报The method 'drive' was called on null 错误
+
+6. flutter 不能预览widget,有点影响效率
+ 
+    

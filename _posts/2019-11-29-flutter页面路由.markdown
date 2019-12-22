@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "2019-11-29-flutter页面路由.markdown"
+date:   2019-11-29 12:11:30 +0800
+
+1. 遇到问题
+1) A -> B,使用pop时,屏幕变黑
+2) A -> B -> C,返回时,直接返回A
+
+2. 原因
+1) 不能使用2个MaterialApp,将后面的改为Scaffold
+https://blog.csdn.net/nimeghbia/article/details/95042262
+2) 同上.
+ 
+ 
+    

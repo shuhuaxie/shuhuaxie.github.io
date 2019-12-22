@@ -1,0 +1,45 @@
+---
+layout: post
+title:  "2019-11-25-dart的精确小数计算和展示.markdown"
+date:   2019-11-25 12:11:30 +0800
+
+1. 在dart中double的计算是不精确的,跟java的一样
+print(0.1*0.1);
+2. 使用Decimal进行精确计算
+1) 引入
+
+```
+dependencies:
+  decimal: ^0.3.0
+```
+2) 使用decimal进行计算
+两个decimal可以进行正常的4则运算
+Decimal.parse('0.01') * Decimal.parse('0.01')
+获取精确的几位数
+```
+Decimal setScale(
+    Decimal decimal, int scale, Decimal roundMethod(Decimal decimal)) {
+  Decimal scaleVal = Decimal.fromInt(pow(10, scale));
+  return roundMethod(decimal * scaleVal) / scaleVal;
+}
+
+Decimal setScaleRoundDown(Decimal decimal, int scale) =>
+    setScale(decimal, scale, (val) => val.floor());
+
+Decimal setScaleRoundUp(Decimal decimal, int scale) =>
+    setScale(decimal, scale, (val) => val.ceil());
+
+Decimal setScaleRound(Decimal decimal, int scale) =>
+    setScale(decimal, scale, (val) => val.round());
+
+```
+3) Decimal可以通过字符,num初始化
+
+Decimal.parse('0.01')
+Decimal.fromInt(10);
+
+4) Decimal 精确几位输出
+
+
+https://github.com/a14n/dart-decimal/
+    
