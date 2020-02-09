@@ -10,4 +10,60 @@ date:   2017-10-30 09:00:30 +0800
 NIO（Non-blocking I/O，在Java领域，也称为New I/O），是一种同步非阻塞的I/O模型，也是I/O多路复用的基础，
 已经被越来越多地应用到大型应用服务器，成为解决高并发与大量连接、I/O处理问题的有效方式。
 
+* concurrent
+1)位置:rt.jar java.util.concurrent
+2)atomic
+通过将变量设置为volatile,提供可见性和有序性保证.
+通过Unsafe来操作数据,并进行原子化的比较和交互操作(unsafe.compareAndSwapInt/compareAndSwapLong/compareAndSwapObject).
+3)BlockingQueue
+使用ReentrantLock来进行锁操作.
+notFull在队列已经满且有新的对象插入的时候,将线程锁住;在有对象取出来的时候,开放一个线程的存入操作.
+notEmpty在队列已经空且需要取数据的时候,将线程锁住.
+3)线程操作关键字
+volatile lock synchronize sleep wait notify notifyAll join ReentrantLock
+
+
+java多线程方面的知识主要是要解决主线程和子线程数据内容不一致,操作顺序不一致的问题.
+
+java在JDK1.5引入了concurrent包,帮助大家解决多线程的问题.
+其中比较有代表性的有Atomic类和BlockingQueue
+1)Atomic源码
+①通过volatile来解决数据一致性和可见性问题.
+②
+通过乐观锁来更新数据.
+通过内置的unsafe执行compareAndSwap的CPU指令操作,是原子性操作
+能解决多线程数字累加问题.
+2)ArrayBlockingQueue源码
+BlockingQueue是一个可供多线程操作的定长队列.ArrayBlockingQueue 是他的一种FIFO实现.
+take 操作,会首先获取ReentrantLock 然后判断队列里是否有数据.如果没有数据执行condition的await操作.
+使用ReentrantLock来管理多线程取数存数的逻辑
+
+file:///D:/download/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF.pdf
+
+ConcurrentHashMap
+
+HashTable
+
+解决ArrayList并发
+一：使用synchronized关键字，这个大家应该都很熟悉了，不解释了；
+
+二：使用Collections.synchronizedList();使用方法如下：
+
+        假如你创建的代码如下：List<Map<String,Object>> data=new ArrayList<Map<String,Object>>();
+ List<Map<String,Object>> data=Collections.synchronizedList(new ArrayList<Map<String,Object>>());
+
+//synchronizedMap
+Map<String, String> synchronizedHashMap = Collections.synchronizedMap(new HashMap<String, String>());
+
+线程安全 vector
+StringBuffer是线程安全，而StringBuilder是线程不安全的。
+
+
+
+
+
+
+
+
+
 
