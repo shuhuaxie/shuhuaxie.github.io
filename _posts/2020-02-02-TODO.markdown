@@ -1,0 +1,44 @@
+---
+layout: post
+title:  "2020-02-02-TODO"
+date:   2020-02-02 12:11:30 +0800
+
+
+1. 网络变化 深度研究
+2. 算法
+3. window总结
+4. APK Analyzer
+5. 图书推荐
+http://books.bigfacewo.com/tag/%E7%A8%8B%E5%BA%8F%E5%91%98
+
+
+页面跳转/网络请求/弹出对话框和交互/Context数据/全局内容监听在MVVM中应该写到哪里
+
+ViewBinding的缺点  官网上的描述
+
+view :
+硬件加速原理
+TextView
+ImageView
+background
+动画
+
+java语言规范+java虚拟机规范
+
+
+dart多线程机制,通讯原理
+binding流程,
+Render层能不能有直接的child关系,是不是只能借助于Widget
+Widget生命周期
+
+心理建设
+人生葵花宝典
+https://www.jianshu.com/p/ef7e2c02dcfd
+
+全知全能 - 神机妙算
+揭示万事万物的普遍联系和变化规律,能够看到别人看不到的,预测别人预测不到的.
+王沪宁 栗战书
+http://news.cri.cn/gb/42071/2015/09/29/8391s5119187_1.htm
+
+
+

@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "2019-04-24-WebView 踩坑记"
+date:   2019-04-24 12:11:30 +0800
+
+1. 图片加载不出来
+https 网址里面的图片不能展示:
+```
+    mWebView.getSettings().setJavaScriptEnabled(true);
+    mWebView.getSettings().setBlockNetworkImage(false);
+    if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {            
+        mWebView.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+    }
+```
+2. 
+
+
+
+
+
+

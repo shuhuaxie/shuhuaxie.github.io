@@ -1,0 +1,20 @@
+---
+layout: post
+title:  "2019-11-10- IOS项目开发须知.markdown"
+date:   2019-11-10 12:11:30 +0800
+
+1. Object-c 声明类需要继承一个基类
+如果是普通类可以继承NSObject.
+继承NSObject需要导入<UIKit/UIKit.h>
+
+
+
+
+
+https://www.imooc.com/qadetail/80225
+
+
+
+ 
+ 
+    

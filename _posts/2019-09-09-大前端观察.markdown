@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "2019-08-23-Surface学习.markdown"
+date:   2019-08-23 12:11:30 +0800
+
+1. 项目
+GCanvas：https://github.com/alibaba/GCanvas
+G3D：https://github.com/alibaba/G3D
+BindingX：https://github.com/alibaba/bindingx
+
+程劭非（寒冬），淘宝高级技术专家。
+谷宝剑 (剑白)
+
+Ian Hickson/Hixie
+
+2. 渲染引擎
+ WebKit 的 fork Web 渲染引擎：Blink
+ 
+ 
+ 
+    

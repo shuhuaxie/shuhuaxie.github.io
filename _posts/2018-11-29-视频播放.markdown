@@ -1,0 +1,131 @@
+---
+layout: post
+title:  "2018-11-29-视频播放"
+date:   2018-11-29 12:11:30 +0800
+
+---
+
+* 在线视频播放主要用的是1999年初的MPEG4技术.
+
+MEPG4拥有高达4000:1的压缩比,是现代视频播放的主流技术标准.
+
+* h264和h265 是MPEG4的具体实现压缩视频规范,主要内容包括视频内容压缩算法, IBP帧和GOP的定义.
+
+* FLV是Adobe公司基于h264压缩算法的视频格式,可以通过FlashPlay进行音视频播放.
+
+* RTMP是Adobe公司的Flv视频内容的网络传输协议,基于tcp.
+
+包含推流和拉流的支持.将音频和视频内容分开传输,而且不规定音视频内容长度,
+所以延迟比较低,目前在各大平台也应用广泛,在Android和IOS端使用方便,在html端需要安装flash播放器.
+
+* 广义的视频直播技术,包括视频推流,视频在服务端解析转码,CDN转发,客户端HTML解码等方面,RTMP在各个方面应用都比较成熟.
+
+* 目前使用协议rtmp，延迟低
+（传输格式rtmp 封装格式flv 编码格式h264）
+
+<div class="table-box"><table border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border-spacing:0px;border:1px solid #C0C0C0;color:rgb(0,0,0);font-family:'Microsoft Yahei';font-size:14px;line-height:21px;width:567px;"><tbody><tr><td valign="top" width="123" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">协议</span></p>
+</td>
+<td valign="top" width="99" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">httpflv</span></p>
+</td>
+<td valign="top" width="111" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">rtmp</span></p>
+</td>
+<td valign="top" width="111" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">hls</span></p>
+</td>
+<td valign="top" width="190" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">dash</span></p>
+</td>
+</tr><tr><td valign="top" width="123" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">传输方式</span></p>
+</td>
+<td valign="top" width="99" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">http流</span></p>
+</td>
+<td valign="top" width="111" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">tcp流</span></p>
+</td>
+<td valign="top" width="111" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">http</span></p>
+</td>
+<td valign="top" width="190" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">http</span></p>
+</td>
+</tr><tr><td valign="top" width="123" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">视频封装格式</span></p>
+</td>
+<td valign="top" width="99" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">flv</span></p>
+</td>
+<td valign="top" width="111" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">flv tag</span></p>
+</td>
+<td valign="top" width="111" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">Ts文件</span></p>
+</td>
+<td valign="top" width="190" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">Mp4 3gp webm</span></p>
+</td>
+</tr><tr><td valign="top" width="123" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">延时</span></p>
+</td>
+<td valign="top" width="99" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">低</span></p>
+</td>
+<td valign="top" width="111" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">低</span></p>
+</td>
+<td valign="top" width="111" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">高</span></p>
+</td>
+<td valign="top" width="190" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">高</span></p>
+</td>
+</tr><tr><td valign="top" width="123" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">数据分段</span></p>
+</td>
+<td valign="top" width="99" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">连续流</span></p>
+</td>
+<td valign="top" width="111" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">连续流</span></p>
+</td>
+<td valign="top" width="111" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">切片文件</span></p>
+</td>
+<td valign="top" width="190" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">切片文件</span></p>
+</td>
+</tr><tr><td valign="top" width="123" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">Html5播放</span></p>
+</td>
+<td valign="top" width="99" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">可通过html5解封包播放(flv.js)</span></p>
+</td>
+<td valign="top" width="111" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">不支持</span></p>
+</td>
+<td valign="top" width="111" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">可通过html5解封包播放(hls.js)</span></p>
+</td>
+<td valign="top" width="190" style="border:1px solid #C0C0C0;border-collapse:collapse;">
+<p><span style="font-family:'Microsoft YaHei';">如果dash文件列表是mp4webm文件，可直接播放</span></p>
+</td>
+</tr></tbody></table></div>
+
+* 阿里云支持 RTMP、FLV及HLS三种播流协议
+
+* 如今国内90%的面向大众的直播平台都是采用的rtmp和httpflv的混合，hls很少，而国外大部分采用的dash，少部分用hls和其他协议。
+
+
+
+* 参考资料：
+https://blog.csdn.net/u014162133/article/details/81911933
+
+https://blog.csdn.net/ai2000ai/article/details/64923594
+
+
+
+

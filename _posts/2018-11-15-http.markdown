@@ -1,0 +1,34 @@
+---
+layout: post
+title:  "2018-11-15-http"
+date:   2018-11-15 12:11:30 +0800
+
+---
+
+* http（HyperText Transfer Protocol）是应用层网络协议，规定了应用层的交互方式。最初为规范
+网页应用和浏览器的网络交互而制定，后来也大量应用到C/S领域。
+
+* 在tcp之上，规定了应用和服务器的交互方式（请求头，返回状态码）和内容（请求内容和返回内容）
+
+* 可以用作其他协议的基础协议。websocket 用它做初次连接和协议提升。
+
+* 单次请求传输数据大小（没有上传和下载大小限制，不过tcp有单次包内容大小限制）
+
+* 并行的Http请求
+在1.1版本，同一个socket可以进行多个Http请求。
+
+* 目前http版本
+共有三个版本1.0,1.1,2.0。目前大厂也都是用的1.1版本.
+1.1版本增加了keep-alive，允许多个请求使用同一个tcp连接
+2.0版本扩展了Keep-alive的内容，允许服务端
+推送消息到客户端，将数据分为head桢和data桢，允许数据乱序传送，压缩head内容，允许head内容缓存。
+
+* tcp是基于ip协议的可靠传输协议，它主要包括3次握手，数据排序，数据校验，数据重传等内容，在
+实现上一般都是基于操作系统的socket
+
+* 参考资料：
+
+代码对比 https://fabiomsr.github.io/from-java-to-kotlin/
+优缺点对比 https://kotlinlang.org/docs/reference/comparison-to-java.html
+
+

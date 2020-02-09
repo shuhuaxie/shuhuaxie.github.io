@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "2019-09-19-读书清单.markdown"
+date:   2019-09-19 12:11:30 +0800
+
+// 心理学相关
+1. 如何清晰地思考：近一年来业余阅读的关于思维方面的知识结构整理（附大幅思维导图）
+https://blog.csdn.net/pongba/article/details/3549560
+
+2. https://www.douban.com/doulist/127649/
+
+3. Effective+Java
+
+4. https://www.xgv5.com/
+ 
+ 
+    

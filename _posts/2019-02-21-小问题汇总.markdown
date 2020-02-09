@@ -1,0 +1,53 @@
+---
+layout: post
+title:  "2019-02-21-小问题汇总"
+date:   2019-02-21 12:11:30 +0800
+
+
+1. 从c++ 启动jvm,是同一个进程和线程吗?
+
+c++ 如果直接启动jvm,是用一个进程和同一个线程,如果fork方式启动jvm则分别是2个;
+
+2. 在android中,如果在子线程进行Looper.prepare,是不是主线程可以停掉
+
+理论上可以,不过UI的操作是锁定主线程的,所以做不到.
+
+3. java程序是不是所有用户线程结束,才算程序结束
+
+是的,所以Android在出现异常后,会主动把进程杀死,及时回收资源
+
+见:https://github.com/shuhuaxie/test-java_test/blob/master/src/ThreadTest.java
+
+4. 线程初始化
+
++ 设置线程名（即设置name属性），一般情况下，这个name的格式是“Thread-X”,X是一个数字，代表用这个线程类初始化的第X个实例
++ 设置线程的ThreadGroup，这个ThreadGroup要么从应用的SecurityManager处拿到，要么就直接继承父线程的ThreadGroup。（设置完成以后还会有一个验证）
++ 在真正设置此线程的ThreadGroup之前，需要为这个ThreadGroup的“还未开始的线程数目”（nUnstartedThreads）加一
++ 设置此线程是否为守护线程（即设置daemon属性），若父线程为守护线程，那么此线程也是守护线程
++ 设置此线程的优先级（即priority属性）为父线程的优先级(顺便补充一句，子线程的优先级是不能大于父线程的)
++ 设置此线程的上下文类加载器
++ 设置这个Thread的target，这个target就是携带了我们写好的run()方法的Runnable对象
++ 设置stackSize
++ 设置线程ID（tid属性）
++ 主线程和系统demon线程的初始化是由虚拟机进行的,不需要走start方法.
++ 新建线程最终会新建操作系统线程
+
+5. java 可以使用jstack来跟踪当前线程状态,android可不可以用.
+
+可以 用
+adb shell ps
+adb shell kill -3 2596
+
+“ps -t 2596”可打印进程pid的所有线程
+
+6. 模拟器获取权限
+https://vimsky.com/article/3682.html
+
+7. targetSdkVersion如果出现降级不能覆盖安装
+https://www.jianshu.com/p/821daad893a6
+
+参考:
+http://www.daimami.com/javascript/228316.htm
+https://www.jianshu.com/p/3ce1b5e5a55e
+http://www.jiacheo.org/blog/338
+https://blog.csdn.net/vrix/article/details/77940823

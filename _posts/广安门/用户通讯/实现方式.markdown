@@ -1,0 +1,15 @@
+1. xwindow的基础上,增加客户端.
+
+2. 使用html来显示界面.
+
+https://developer.gnome.org/gtk3/unstable/gtk-broadway.html
+
+https://stackoverflow.com/questions/19556947/html5-javascript-x11-server
+
+https://www.webtoolkit.eu/wt
+
+推荐解决方案:(Open Source VNC client using HTML5 (WebSockets, Canvas))
+
+https://github.com/novnc/noVNC
+
+https://novnc.com/info.html

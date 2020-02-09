@@ -1,0 +1,23 @@
+---
+layout: post
+title:  "2019-05-16-CPU"
+date:   2019-05-16 12:11:30 +0800
+
+* 起因: 在vultr上运行Android studio,CPU占用率100%,过一会就被系统kill.
+初步判断是CPU超负荷导致的.
+
+* CPU的主要性能区别
+
+* 主频是衡量CPU的一个性能指标,是cpu的时钟频率,单位时间（如1秒）内所产生的脉冲个数称为频率。
+频率与实际运行速度没有直接的关系.但是CPU的流水线的各方面的性能指标（缓存、指令集、CPU的位数等等）
+相同的情况下,提升主频可以直接提升运行速度.
+
+* 目前CPU主频基本变化不大,主要通过增加核数来提升性能
+
+https://know.baidu.com/question/7e32690b1485b37afa0401f037514e8a06cd408
+
+https://www.zhihu.com/question/32096371?sort=created
+
+
+
+

@@ -1,0 +1,40 @@
+---
+layout: post
+title:  "2019-04-22-界面渲染流程"
+date:   2019-04-22 12:11:30 +0800
+
+1. 一般渲染流程
+    硬件发出VSYNC信号,cpu开始绘制内容,gup进行栅格化处理,传输到硬件层显示
+2. cpu工作内容
+    1) java 
+        
+    2) native
+        Surface(绘制内容的基本容器, 在App端和SurfaceFling中各有一个镜像实体)
+        共享Graphic Buffer
+3. gup工作内容(SurfaceFlinger进程(合成及显示))
+```
+    第一步：在Android 应用程序这一侧进行的。(将 UI 构建到一个图形缓冲区 
+    Buffer 中，交给SurfaceFlinger )
+    第二步：在SurfaceFlinger进程这一侧进行的。(获取Buffer 并合成以及显
+    示到屏幕中。)
+    其中，第二步在 SurfaceFlinger 的操作一直是以硬件加速方式完成的，所以
+    我们说的硬件加速一般指的是在 应用程序 图形通过GPU加速渲染 到 Buffer 
+    的过程。
+```
+4. 硬件层
+
+另:
+如果使用draw叠加计算来执行动画,关闭屏幕会导致动画暂停,基于时间的动画
+会忽略关闭屏幕带来的影响.
+
+clipChildren可以让子View超过父View的范围
+
+参考:
+https://blog.csdn.net/u011403718/article/details/54630760
+
+
+
+
+
+
+

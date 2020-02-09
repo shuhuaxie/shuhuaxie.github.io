@@ -7,5 +7,46 @@ date:   2017-07-21 16:51:30 +0800
 * 综合技术
 http://www.cnblogs.com/shanyou/archive/2010/10/06/1844767.html
 
+* 技术博客
+https://skyao.io/
+
+* 技术pdf下载
+https://salttiger.com/page/9/
+
+* 人工智能
+https://blog.just4fun.site/category/%E7%BC%96%E7%A8%8B.html
+
+Microsoft Bot Framework
+https://dev.botframework.com/
+
+https://developers.facebook.com/docs/messenger-platform/getting-started
+
+* flutter
+https://mp.weixin.qq.com/s/cJjKZCqc8UuzvEtxK1BJCw
+
+* 学习网站
+http://www.runoob.com/
+
+* nytimes
+https://open.blogs.nytimes.com/2016/02/11/improving-startup-time-in-the-nytimes-android-app/
+
+http://blog.nimbledroid.com/2016/02/17/cold-start-times-of-top-apps.html?top?=25&category=MUSIC_STREAMING
+https://www.quora.com/What-is-considered-a-good-mobile-app-startup-time
 
 
+https://bytes.swiggy.com/how-we-improved-our-android-app-cold-start-time-by-53-6ef96a1b92cd
+
+https://redfin.engineering/how-we-improved-our-android-app-cold-start-time-by-28-a722e231314a
+https://stackoverflow.com/questions/14124913/measure-android-app-startup-time
+
+* facebook
+https://code.fb.com/android/improving-facebook-s-performance-on-android-with-flatbuffers/
+
+* android技术
+https://www.jianshu.com/u/bb52a2918096
+
+* 设计模式等
+https://www.runoob.com
+
+* android技术
+http://gityuan.com/archive/

@@ -1,0 +1,20 @@
+---
+layout: post
+title:  "2019-11-12- flutter使用谜题.markdown"
+date:   2019-11-12 12:11:30 +0800
+
+1. Row下面排列的Error
+
+```
+            Row(
+              children: <Widget>[
+                Text("账号"),
+//                TextField(),
+              ],
+            ),
+
+            ```
+
+ 
+ 
+    
