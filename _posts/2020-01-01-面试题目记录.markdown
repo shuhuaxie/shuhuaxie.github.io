@@ -1,0 +1,62 @@
+---
+layout: post
+title:  "2020-01-01-面试题目记录.markdown"
+date:   2020-01-01 12:11:30 +0800
+
+1. Android
+  A->B 的流程
+  Looper
+  内存 
+  // 第三方 内存检测
+  打包流程
+  资源混淆
+  liveData // view测试
+  Animate原理和其他动画的区别
+2. java
+  RxJava
+  Final
+  继承的范围和访问权限变更
+  注解
+3. 数据结构
+  Entry
+4. 算法
+  100以内的素数
+5. 多线程
+  volatile
+  单例
+  什么情况下会有锁的阻塞
+6. C++
+  C和C++方法的区别
+7. Flutter //比重不多
+
+### 面试题目来源
+* 网络:android面试
+* 针对简历
+* 平时积累方向的知识
+
+* 快速筛选
+  问题简单的 不会马上淘汰;
+  
+  
+https://github.com/xiangjiana/Android-MS
+    
+    
+密码学与网络安全
+
+对称加密算法指加密和解密使用相同密钥的加密算法。常见的对称加密算法：DES、3DES、DESX、Blowfish、IDEA、RC4、RC5、RC6和AES
+
+非对称加密算法指加密和解密使用不同密钥的加密算法，也称为公私钥加密。常见的非对称加密算法：RSA、ECC（移动设备用）、Diffie-Hellman(DH算法)、El Gamal、DSA（数字签名用）。
+
+Hash散列算法特别的地方在于它是一种单向算法，用户可以通过Hash算法对目标信息生成一段特定长度的唯一的Hash值，却不能通过这个Hash值重新获得目标信息。因此Hash算法常用在不可还原的密码存储、信息完整性校验等。常见的Hash算法：MD2、MD4、MD5、HAVAL、SHA、SHA-1、HMAC、HMAC-MD5、HMAC-SHA1。
+
+
+EGL handles graphics context management, 
+surface/buffer binding, rendering synchronization,
+ and enables "high-performance, accelerated,
+  mixed-mode 2D and 3D rendering using other Khronos APIs."
+  
+  EGL : 平台window system和OpenGl的中间层
+  1) 保存上下文状态(graphics context management)
+  2) 渲染数据和屏幕绑定(surface/buffer binding)
+  3) 渲染同步(swap  rendering synchronization )
+  4) 混合2d和3d数据

@@ -11,7 +11,7 @@ date:   2019-04-22 12:11:30 +0800
     2) native
         Surface(绘制内容的基本容器, 在App端和SurfaceFling中各有一个镜像实体)
         共享Graphic Buffer
-3. gup工作内容(SurfaceFlinger进程(合成及显示))
+3. gpu工作内容(SurfaceFlinger进程(合成及显示))
 ```
     第一步：在Android 应用程序这一侧进行的。(将 UI 构建到一个图形缓冲区 
     Buffer 中，交给SurfaceFlinger )

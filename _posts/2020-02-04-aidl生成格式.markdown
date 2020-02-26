@@ -1,0 +1,51 @@
+---
+layout: post
+title:  "2020-02-04-aidl生成格式.markdown"
+date:   2020-02-04 12:11:30 +0800
+
+1. aidl 生成格式
+```
+public interface IPersonAidlInterface extends android.os.IInterface {
+public static abstract class Stub extends android.os.Binder implements com.jeep.client_aidl.IPersonAidlInterface {
+        private static final java.lang.String DESCRIPTOR = "com.jeep.client_aidl.IPersonAidlInterface";
+ asInterface//本地 或 Proxy
+ asBinder
+ onTransact// data获取输入 reply写入输出
+  private static class Proxy implements com.jeep.client_aidl.IPersonAidlInterface {
+    private android.os.IBinder mRemote;
+  methodes//transact
+  }
+ }
+ methodes
+}
+```
+2. 添加自定义类型
+1) 添加bean
+2) 添加同名aidl,使用parcelable引入bean
+3) 在通讯的aidl中import
+4) 增加readFromParcel方法
+5) 注意 so you must declare it as in, out or inout.
+https://blog.csdn.net/fengyun1989/article/details/51489993
+
+3. out,in,inout使用说明(in 从client到server)
+```
+Proxy
+inPerson(Person p){
+  ...
+  p.writeToParcel(_data, 0);
+  ...
+}
+outPerson(Person p){
+  ...
+  p.readFromParcel(_reply);
+  ...
+}
+inoutPerson(Person p){
+  ...
+  p.writeToParcel(_data, 0);
+  ...
+  p.readFromParcel(_reply);
+  ...
+}
+```
+

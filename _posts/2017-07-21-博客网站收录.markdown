@@ -50,3 +50,10 @@ https://www.runoob.com
 
 * android技术
 http://gityuan.com/archive/
+https://blog.csdn.net/itachi85
+https://blog.piasy.com/about/index.html
+
+* git项目
+https://github.com/Piasy/BigImageViewer
+
+https://www.androidos.net.cn/osarticle

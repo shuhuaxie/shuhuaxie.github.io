@@ -11,7 +11,8 @@ date:   2019-12-16 12:11:30 +0800
 可以native运行;
 with,mixin,on;
 extension on;
-assert
+assert // assert 在生产模式无效
+构造函数
 
 # 优化使用
 单接口优先使用Function
