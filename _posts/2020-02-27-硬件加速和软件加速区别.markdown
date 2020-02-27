@@ -11,7 +11,7 @@ date:   2020-02-27 12:11:30 +0800
 
 3. 硬件加速的优势体现在2个方面
 1) 使用GPU,动画运算性能有优势
-2) Canvas使用的是DisplayListCanvas,对比ompatibleCanvas,
+2) Canvas使用的是DisplayListCanvas,对比compatibleCanvas,
 增加了绘制命令的缓存,进一步提升性能.
 
 4. 测试
