@@ -1,0 +1,36 @@
+---
+layout: post
+title:  "2020-03-11-mac设置path.markdown"
+date:   2020-03-11 12:11:30 +0800
+
+1. Open (or create) the rc file for your shell. 
+For example, macOS Mojave (and earlier) uses the Bash shell by default,
+ so edit $HOME/.bash_profile or $HOME/.bashrc.
+  macOS Catalina uses the Z shell by default,
+   so edit $HOME/.zshrc. 
+   If you are using a different shell, 
+   the file path and filename will be different on your machine.
+2. Add the following line and change 
+[PATH_TO_FLUTTER_GIT_DIRECTORY] to be 
+the path where you cloned Flutter’s git repo:
+```
+$ export PATH="$PATH:[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin"
+```
+3. Run source $HOME/.<rc file> to refresh the current window, 
+or open a new terminal window to automatically source the file.
+4. Verify that the flutter/bin directory is now in your PATH by running:
+   
+```
+    $ echo $PATH
+```
+   Verify that the flutter command is available by running:
+```
+    which flutter
+```
+
+
+
+
+
+
+

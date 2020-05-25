@@ -1,0 +1,46 @@
+---
+layout: post
+title:  "2020-03-21-连接错误.markdown"
+date:   2020-03-21 12:11:30 +0800
+
+1. 报错信息
+Read error: ssl=0x8e015a88: I/O error during system call, Connection reset by peer
+
+E/HttpClient: Catch exception. INNER_ERROR
+    javax.net.ssl.SSLException: Read error: ssl=0x898d4108: I/O error during system call, Connection reset by peer
+        at com.android.org.conscrypt.NativeCrypto.SSL_read(Native Method)
+        at com.android.org.conscrypt.NativeSsl.read(NativeSsl.java:399)
+        at com.android.org.conscrypt.ConscryptFileDescriptorSocket$SSLInputStream.read(ConscryptFileDescriptorSocket.java:546)
+        at com.android.okhttp.okio.Okio$2.read(Okio.java:136)
+        at com.android.okhttp.okio.AsyncTimeout$2.read(AsyncTimeout.java:211)
+        at com.android.okhttp.okio.RealBufferedSource.indexOf(RealBufferedSource.java:306)
+        at com.android.okhttp.okio.RealBufferedSource.indexOf(RealBufferedSource.java:300)
+        at com.android.okhttp.okio.RealBufferedSource.readUtf8LineStrict(RealBufferedSource.java:196)
+        at com.android.okhttp.internal.http.Http1xStream.readResponse(Http1xStream.java:186)
+        at com.android.okhttp.internal.http.Http1xStream.readResponseHeaders(Http1xStream.java:127)
+        at com.android.okhttp.internal.http.HttpEngine.readNetworkResponse(HttpEngine.java:762)
+        at com.android.okhttp.internal.http.HttpEngine.readResponse(HttpEngine.java:634)
+        at com.android.okhttp.internal.huc.HttpURLConnectionImpl.execute(HttpURLConnectionImpl.java:482)
+        at com.android.okhttp.internal.huc.HttpURLConnectionImpl.getResponse(HttpURLConnectionImpl.java:418)
+        at com.android.okhttp.internal.huc.HttpURLConnectionImpl.getResponseCode(HttpURLConnectionImpl.java:549)
+        at com.android.okhttp.internal.huc.DelegatingHttpsURLConnection.getResponseCode(DelegatingHttpsURLConnection.java:105)
+        at com.android.okhttp.internal.huc.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:26)
+        at com.baidu.mapapi.http.HttpClient.request(Unknown Source:65)
+        at com.baidu.mapapi.http.a.a(Unknown Source:29)
+        at com.baidu.mapapi.http.AsyncHttpClient$a.run(Unknown Source:0)
+        at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:458)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+        at java.lang.Thread.run(Thread.java:764)
+
+参考文件
+
+ https://stackoverflow.com/questions/30538640/javax-net-ssl-sslexception-read-error-ssl-0x9524b800-i-o-error-during-system
+ 
+
+
+
+
+
+

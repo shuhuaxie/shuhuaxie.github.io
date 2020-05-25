@@ -202,4 +202,7 @@ u0_a66        2819  1901 3569736  99860 0                   0 S com.android.mess
 
 * ps -T -p 2617 查看某个进程的全部线程信息
 
+* 批量更改文件名称
+~ rename 's/old/new/' *.files 
+
 

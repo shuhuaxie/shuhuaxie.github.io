@@ -5,6 +5,7 @@ https://www.baiyu.tech/
 2. 书籍资源
 
 http://www.java1234.com/
+https://linux.linuxidc.com/index.php
 
 3. java规范
 
@@ -15,3 +16,6 @@ https://docs.oracle.com/javase/specs/
 
 5. 外包网站
 http://www.51waibao.net/
+
+6. 技术网址
+https://www.infoq.cn/
