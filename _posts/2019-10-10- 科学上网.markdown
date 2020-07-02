@@ -27,6 +27,9 @@ firewall-cmd --query-port=9980/tcp --zone=public
 
 5. 查看端口是打开的,但是外网也无法访问?
 
+6. ss和ssr
+https://flyzyblog.com/install-ss-ssr-bbr-in-one-command/
+
  
  
     

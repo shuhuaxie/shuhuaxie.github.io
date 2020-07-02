@@ -18,3 +18,5 @@ Application binary interface
 4. gradle可以设置abifilter,仅打包某些abi.对于不能匹配的手机和apk
 会提示安装出错.如果在某中abi中存在so缺失,则会在运行时报错.
 很多第三方工具可能只支持部分so,不能满足app需求.
+
+5. app的so文件要对齐,所有目录下的so文件数量都应该相同
