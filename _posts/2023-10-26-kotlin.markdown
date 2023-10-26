@@ -1,0 +1,91 @@
+---
+layout: post
+title:  "2023-10-26-kotlin.markdown"
+date:   2023-10-26 12:11:30 +0800
+
+1) 变量
+类型推断
+空指针保护
+    let ? ?: 空合并操作符
+    / **
+        var info:String ?= null
+        println(info ?: "is null")
+    ** /
+部分类型Int Float会转化为java的基本数据类型
+2) 条件语句
+when/if 变为表达式,增加in 和 not in
+3) String
+模版可以带if函数
+可以用${x}取变量
+split分隔符
+    / **
+        val list = "1,2,3".split(",")
+        // c++ 解构, Kt也有解构
+        val (v1, v2, v3) = "1,2,3".split(",")
+    ** /
+4) 函数
+可以有默认入参,可以声明具体的函数参数
+函数名带`` ,可以使用kt关键字做函数名,特殊字符作为函数名
+匿名函数
+    函数可以作为变量进行传递
+        / **
+            var me : () -> String
+        ** /
+    可以对一个对象的函数传入匿名函数来修改其行为
+        / **
+        val len2 = "Derry".count{
+        it == 'r'
+        } ** /
+    匿名函数最后一行是返回值
+    大括号里面添加变量声明
+        / **
+        val me  : (Int, Int, Int) -> String = { n1, n2, n3->
+            "${n1}, 参数2${n2}"
+        }
+        ** /
+    入参和出参可以自动推断
+        / **
+        val me  = { n1 : Int, n2: Int, n3: Int->
+        "${n1}, 参数2${n2}"
+        }
+        ** /
+最后一个入参是函数,可以写在括号外面invokeMethod(1){-> "xx"}
+inline 内联,使函数发生嵌套,减少创建对象的过程
+函数传参需要把函数转化为函数对象的引用
+    / **
+        login("name", ::m1)
+        
+        val obj = ::m1
+        login("name", obj)
+        }
+        fun m1(msg:String){
+        
+        }
+        inline fun login(name:String,resp:(String)->Unit){
+        
+        }
+    ** /
+函数可以作为函数的出参,出参声明为函数签名
+5) 类
+增加unit(方便获取函数表达式等的返回内容)
+增加 TODO Nothing,直接抛出异常
+6) 关键字
+it
+    可以做为函数唯一入参的默认名称
+apply
+    创建一个空间, 变量可以以this访问,同时this可以省略
+    / ** 
+    val infoNew : String = info.apply {
+        println("info的长度:${length}")
+    }
+    ** /
+7) 
+
+
+    
+
+
+
+
+
+
