@@ -1,0 +1,50 @@
+---
+layout: post
+title:  "2023-12-08-插件化.markdown"
+date:   2023-12-08 12:11:30 +0800
+
+1. 插件化 - 代码插件化
+1) java自定义类加载器
+-可以设置查找class的文件目录,进而加载下载插件的代码
+    在需要加载插件内容时,主动使用自定义类加载器加载插件入口类
+-被自定义类加载器加载的类,在遇到其他待加载的类时,会使用自定义类加载器
+
+
+-能否加载系统类
+2) 双亲委派机制
+BootStrap ClassLoader
+Extension ClassLoader
+Application ClassLoader
+
+BootClassLoader
+PathClassLoader
+DexClassLoader
+
+-设置自定义类加载器的父加载器为DexClassLoader,插件可以使用插件容器的类
+
+2. 插件化 - 四大组件
+- Activity的加载需要系统验证
+可以通过hook Instrumentation或者ActivityManager,将插件的Activity改为预设的Activity
+- 需要拦截Activity的加载
+    api 28 - android 9有AppComponentFactory
+
+3. 插件化 - SO
+- System.loadLibrary()的方式会在classLoader的目录中查找so文件
+- System.load("")可以加载文件的绝对路径
+4. 插件化 - 资源文件
+- 使用AssetManager中addAssetPath的方式,添加插件资源目录;
+    需要解决R文件id冲突的问题.可以使用aapt2的--package-id参数
+    需要在定义资源名称的时候避免冲突
+- 可以为插件Activity设置自定义AssetManager;插件和宿主的资源不互通
+
+  
+
+
+
+    
+
+
+
+
+
+

@@ -69,6 +69,23 @@ inline 内联,使函数发生嵌套,减少创建对象的过程
 5) 类
 增加unit(方便获取函数表达式等的返回内容)
 增加 TODO Nothing,直接抛出异常
+主构造函数
+    / **
+    class kb (name: String) {}
+    ** /
+次构造函数必须要调用主构造函数
+inner class 
+    内部类
+    使用inner关键字,可以内部类访问 外部类,外部类访问内部类
+class 套 class
+    嵌套类无法调用外部类
+data class
+    数据类 普通类只有 set get 构造函数,数据类增加了 解构 copy toString hashCode equals
+    解构函数
+    / **
+    val(name, age sex) = Student("李四", 89,`男`)
+    ** /
+    
 6) 关键字
 it
     可以做为函数唯一入参的默认名称
@@ -79,7 +96,62 @@ apply
         println("info的长度:${length}")
     }
     ** /
-7) 
+    始终返回自己,可以进行链式调用
+let
+    最后一行是返回值
+    x?.let{} 可以在为空时不执行
+    持有it
+run
+    最后一行是返回值
+    持有this
+    可以使用匿名函数和具名函数
+    it可作为函数的入参
+    /**
+        str.run{
+    }
+        str.run(::isLong) // this默认作为函数的入参
+    fun isLong(str: String)
+        str.run(::println) // 使用系统内置函数
+    **/
+with
+    和run基本一致,使用方法不同with(str){}
+also
+    始终返回自己,和apply一样;
+    持有it
+takeIf/takeUnless
+    根据{}中内容返回xx 或者 null
+    /**
+    xx.takeIf{
+        // true or false
+    }
+    **/
+mutator / removeIf
+    运算符重载
+    list += "xxx"
+field
+    在函数定义时,可以在var后跟get和set,配合field使用
+open
+    去掉final修饰(class 或者 fun)
+object
+    可以替换class,既是单例实例,又是类名
+    匿名对象表达式
+    / **
+    val p : Kt = object : Kt(){ }
+    ** /
+companion object
+    类似java的static
+    / **
+    class x {
+        companion object {
+            val info = "xx"
+        }
+    }
+    ** /
+sealed 
+    密封类
+by
+    代理
+
 
 
     
