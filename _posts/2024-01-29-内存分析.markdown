@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "2024-01-29-内存分析.markdown"
+date:   2024-01-29 12:11:30 +0800
+
+1) 下载mat的执行文件
+- https://eclipse.dev/mat/downloads.php
+- 下载Stand-alone Eclipse RCP Applications(插件只有Eclipse才能识别)
+
+2) dump内存文件
+String filePath = App.this.getExternalCacheDir()+"/dump.hprof";
+Debug.dumpHprofData(filePath);
+3) 可以直接使用android studio打开.hprof文件
+4) 使用hprof-conv将android的hprof转化为java的的格式
+- 不转化会报错Unknown HPROF Version (JAVA PROFILE 1.0.3)
+5) mat打开转化后的文件
+
+
+
+
+
+
+    
+
+
+
+
+
+
