@@ -1,0 +1,26 @@
+---
+layout: post
+title:  "2024-02-07-cpu占用率分析.markdown"
+date:   2024-02-07 12:11:30 +0800
+
+1) 空白占用
+
+- top -d 30
+- 核数
+cat /proc/cpuinfo | grep -c processor
+    
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+

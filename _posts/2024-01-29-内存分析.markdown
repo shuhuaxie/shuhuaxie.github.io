@@ -15,6 +15,11 @@ Debug.dumpHprofData(filePath);
 - 不转化会报错Unknown HPROF Version (JAVA PROFILE 1.0.3)
 5) mat打开转化后的文件
 
+注意:
+- 在android中使用WeakReference,可能会出现迟迟不进行gc的情况,或者gc后WeakReference也不会被回收
+- 系统有对destroy Activity的弱引用.
+- 在pad上,申请100M之后,1S内触发GC,会回收WeakReference
+
 
 
 
