@@ -1,0 +1,50 @@
+---
+layout: post
+title:  "2024-01-04-性能"
+date:   2024-01-04 12:11:30 +0800
+
+- 生命周期
+    置入后台时,停止界面刷新,停止网络请求,返回到主界面时恢复
+- 界面优化
+    ViewGroup 
+        LinearLayout/FrameLayout
+    ViewStub  
+        按需加载
+    避免过度绘制
+        移除默认的 Window 背景
+    绘制优化
+        onDraw中不要创建新的局部对象
+        onDraw方法中不要做耗时的任务
+- 内存优化
+    避免内存泄漏
+    Mat/LeakCanary来静态分析
+    软引用和弱引用
+- 运行速度优化
+    自定义Printer: Looper.java中loop()方法的logging.print的特殊关键字****
+        (x.startsWith(">>>>>")) // https://buder.blog.csdn.net/article/details/104447490
+    WatchDog: 启动一个异步线程，在while循环中，使用主线程的Handler发送一个消息，线程休眠指定的时间5s，
+        当线程唤醒之后，如果发送的消息还没被主线程执行，即认为主线程发生了卡顿。 //
+    Choreographer.FrameCallback:监控绘制频率
+- 安装包优化
+    res资源优化
+        使用一套资源
+    代码混淆    
+    asset
+        对ttf字体文件压缩，可以采用FontCreator工具只提取出你需要的文字。
+    lib资源优化
+        动态下载的资源
+        SO过滤
+
+
+
+  
+
+
+
+    
+
+
+
+
+
+
