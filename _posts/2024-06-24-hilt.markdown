@@ -1,0 +1,45 @@
+---
+layout: post
+title:  "2024-06-24-hilt.markdown"
+date:   2024-06-22 12:11:30 +0800
+
+1. 依赖注入的优点
+- 方便提供自动的依赖管理,避免人工错误的初始化顺序
+- 模块化架构中,对模块间的依赖进行解耦
+2. 基本的di(provider无构造函数)
+- 提供依赖 
+使用@Inject注解,类的提供者构造函数
+class DateFormatter @Inject constructor() {
+单例需要使用Singleton
+@Singleton
+class LoggerLocalDataSource @Inject constructor(private val logDao: LogDao) {
+- 使用依赖
+使用@Inject注解,类的成员变量
+@Inject lateinit var dateFormatter: DateFormatter
+- 原理
+通过apt的方式创建Factory,获取依赖对象
+public final class DateFormatter_Factory implements Factory<DateFormatter> 
+
+3. hilt的扩展功能
+- 基于接口的DI
+使用module来定义一定范围的接口依赖,使用Provides提供接口的具体实现
+- 接口有多个实现类
+需要在依赖时使用限定符注解,区分实现类
+
+
+ 
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
