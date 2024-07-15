@@ -14,9 +14,12 @@ date:   2024-06-22 12:11:30 +0800
 // Enables namespacing of each library's R class
 android.nonTransitiveRClass=false
  这样在开发时,编辑器中使用代码引用的资源就不会爆红,因为主工程build时,会主动增加aar中的资源
+3. 换肤功能
 
-
-
+4. 组件化优点
+- 团队分工合作
+- 更方便功能差异化出包
+- 降低项目耦合度,方便进行版本控制
 
  
 
