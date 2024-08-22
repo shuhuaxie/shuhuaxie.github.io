@@ -1,0 +1,42 @@
+1. 常规打包
+    - 申请一个apple账号，在网站升级为开发者账号
+    - 在公司内申请加入公司组
+    - 申请通过后
+    - 在Targets/signing&Capabilities上选取公司的team就可以正常打包了
+2. 更改应用名称
+    - 可以在Targets/General中更改DisplayName
+    - 可以更改Info标签中BundleName
+    - 一般BundleName会关联一个变量$(PRODUCT_NAME)
+    - 更改BuildSettings中Packaging中的ProductName，可以区分打包方式Debug/Release
+3. 语法现象
+    - guard：前置判断是否为空等条件，全部true，进行接下来操作
+        ```
+            guard let name = name , 
+            checkSomeThing() else {
+                doS()
+                return
+            }
+            startMain()
+        ```
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
