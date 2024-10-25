@@ -64,11 +64,24 @@
                 notifyListeners();
                 _handleChange:setState
                 ```
+            - SlideTransition.build
+                ```
+                Offset offset = position.value;
+                // getValue 会触发evaluate函数实现懒加载效果
+                ```
             - _animation: _AnimatedEvaluation
                 ```
                 _evaluatable.evaluate(parent); // Tween -> CurvedAnimation
                 activeCurve.transform(t); // CurvedAnimation -> AnimationController|Animation<double>
                 ```
+            - FractionalTranslation
+                - updateRenderObject
+                ```
+                renderObject
+                    ..translation = translation
+                    ..transformHitTests = transformHitTests;
+                ```
+
             
 
 
