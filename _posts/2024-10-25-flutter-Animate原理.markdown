@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "2024-07-15-kotlin.markdown"
-date:   2024-07-15 12:11:30 +0800
+title:  "2024-10-25-flutter-Animate原理.markdown"
+date:   2024-10-25 12:11:30 +0800
 ---
 
 - Animate典型运行代码
