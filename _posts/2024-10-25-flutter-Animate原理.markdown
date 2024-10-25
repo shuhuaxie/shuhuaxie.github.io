@@ -1,3 +1,9 @@
+---
+layout: post
+title:  "2024-07-15-kotlin.markdown"
+date:   2024-07-15 12:11:30 +0800
+---
+
 - Animate典型运行代码
 ```
     _controller = AnimationController(
