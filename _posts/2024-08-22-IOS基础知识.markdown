@@ -18,8 +18,13 @@
             }
             startMain()
         ```
-
-
+4. 常用工具
+    - xcodes：https://www.xcodes.app/ 下载ios模拟器的工具，支持断点续传和xcode多版本管理。
+    用xcode直接下载模拟器，很容易出现断开连接的问题导致，下载失败。跟android不一样，如果没有模拟器，没办法预览storyboard
+    - 
+5. xcode快捷键
+    - 修改变量名（Edit All in Scope，默认快捷键Ctrl+Command+E）
+    - 右键代码 showlastchangeforline查看提交记录
 
 
 
