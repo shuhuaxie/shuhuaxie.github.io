@@ -1,3 +1,0 @@
-1. 在gradle运行时遇到
-
-exec_pty(54): returning due to error: Cannot allocate memory
