@@ -1,0 +1,81 @@
+一 Get.to路由导航
+	优点：
+		简洁
+			无需context
+				- GetMaterialApp全局存储context
+			动态路由传参，传统需要构造函数
+				- 挂在Get的全局变量上
+			集中管理路由表，支持命名路由
+		灵活
+			中间件支持
+			自动触发GetxController生命周期
+二 数据监听
+1. 基本数据类型 RxInt + obx的原理 （RxInt extends Rx<int>）
+	- 监听者模式
+	- 加上了监听者生命周期，类似android的LiveData
+		- 生命周期跟随StatefulWidget
+	- 数据变化，界面变化无缝衔接，无需直接listen某一个数据的变化
+	- 使用注意事项
+		- Widget获取值使用了逻辑判断，需要把相关的obs值全取出来建立监听
+	- 核心类介绍
+		- ObxState
+			- RxNotifier observer
+				- NotifyManager
+					- addListener 增加上游（RxInt），1对多
+					- listen 增加下游（setState）
+				- RxInterface
+					- notifyChildren
+						通过RxInterface.proxy，build，get（RxObjectMixin），为observer动态增加上游，允许Obx嵌套使用，增加无监听报错
+		- GetStream
+			- listen 监听时，不会主动发送数据
+			- add 添加数据，触发notify
+			- _isBusy 标记是否在notifyData
+				Future.delayed(Duration.zero)延迟addSubscription
+2. GetxController原理
+	通过put和get管理GetxController
+	配合GetView（stateless），自动释放
+	是Rx数据挂靠的地方，控制Rx数据的生命周期
+3. RxInt和GetxController 必须同时使用吗
+4. GetView
+	使用范性便捷获取GetController
+5. Obx(() => _tabBody)
+	- Expanded - ListView.separated - GestureDetector- Container
+		- decoration  controller.selectIndex.value 监听不生效
+其他:
+	- set相同值会触发notify吗？
+		使用==进行新值和旧值比较，相同则不触发notify
+三 Get.dialog
+	灵活
+		无需Context
+	简洁
+		自动绑定页面生命周期‌
+四 .tr
+	更换语言
+	forceAppUpdate();
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+

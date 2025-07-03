@@ -1,4 +1,3 @@
-
 - Animate典型运行代码
 ```
     _controller = AnimationController(
