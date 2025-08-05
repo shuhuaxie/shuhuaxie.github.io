@@ -1,0 +1,151 @@
+1. 简单功能介绍
+
+2. 增量功能介绍
+
+3. 设计思想
+
+4. 源码解析
+
+HookConsumerWidget
+- _HookConsumerElement
+- ConsumerWidget
+	- build(BuildContext context, WidgetRef ref);
+	- _ConsumerState createState() => _ConsumerState();
+- ConsumerStatefulWidget
+	- createElement
+- ConsumerStatefulElement
+
+- _ConsumerState
+- ConsumerState
+- late final WidgetRef ref = context as WidgetRef;
+
+- ConsumerStatefulElement extends StatefulElement implements WidgetRef
+	- ProviderContainer _container
+	- _dependencies
+	-  return _container.listen<Res>(
+        target,
+        (_, __) => markNeedsBuild(),
+      ); // 监听target，发生变化后，markNeedsBuild
+	- provider.addListener(
+	-   T read<T>(ProviderListenable<T> provider) {
+   		 	_assertNotDisposed();
+    		return ProviderScope.containerOf(this, listen: false).read(provider);
+ 		 }
+- NotifierProvider
+	- 构造函数 _createNotifier TodoList.new
+	- NotifierProviderImpl
+			-   @override
+  			NotifierProviderElement<NotifierT, T> createElement() {return NotifierProviderElement(this);  }
+	- NotifierProviderBase
+		- _createNotifier
+	- ProviderBase
+- Provider
+	-   @override
+  		ProviderElement<State> createElement() => ProviderElement(this);
+	- InternalProvider
+		- ProviderBase
+			- ProviderListenable
+			- addListener
+				- final element = node.readProviderElement(this);
+		- OverrideWithValueMixin
+	- AlwaysAliveProviderBase
+- ProviderContainer 顶层注入
+	readProviderElement
+	
+- NotifierProviderElement
+	- ProviderElementBase
+	// _performBuild - buildState
+	- void create({required bool didChangeDependency}) {
+    final provider = this.provider as NotifierProviderBase<NotifierT, T>;
+    final notifierResult = _notifierNotifier.result ??= Result.guard(() {
+    	// 为 Notifier 添加element
+      return provider._createNotifier().._setElement(this);
+    });
+
+    // If the Notifier failed to create (such as if the constructor has an assert exception),
+    // then we purposefully rethrow the error.
+    // This way, doing `watch(provider)` will rethrow the error.
+    final notifier = notifierResult.requireState;
+
+    setState(provider.runNotifierBuild(notifier));
+  }
+- ProviderElementBase - element
+	- _dependents
+	- _notifyListeners
+
+- build（BuildContext context, WidgetRef ref）
+- ref.watch(filteredTodos);
+
+Notifier<List<Todo>>
+- state = xx
+- _element.setState(value);
+
+- Notifier
+- BuildlessNotifier
+- NotifierBase
+	- _setElement（ProviderElementBase）
+- NotifierProviderElement
+	- create
+- ProviderBase
+	  @override
+  	StateT read(Node node) {
+    	final element = node.readProviderElement(this);
+    	element.flush();
+   	 // In case `read` was called on a provider that has no listener
+    	element.mayNeedDispose();
+    	return element.requireState;
+ 	 }
+- ProviderElementBase _onChangeSelfListeners 触发
+
+- _StateReader
+	- ProviderBase override
+	- _create override.createElement()
+
+late ProviderContainer _container = ProviderScope.containerOf(this);
+
+- ProviderContainer
+  - Result read<Result>(
+    	ProviderListenable<Result> provider,
+ 		 ) {
+    		return provider.read(this);
+  		}
+  - ProviderElementBase<State> readProviderElement<State>(
+    ProviderBase<State> provider,
+  )
+  
+  
+原理
+- 消息发送者
+	- Provider - Notifier
+	- 需要通过Provider获取notifier来进行状态变更，为state赋值，不能直接改变监听对象
+- 监听者
+	- Widget背后的Element （markNeedBuild）进行界面重绘
+- 建立监听关系
+	- 跟数据绑定的Widget需要继承HookConsumerWidget
+	- 在build中使用ref.watch(Provider)来为界面和数据建立监听关系
+	- 使用watch的返回值参与build
+	- 难点：final element = node.readProviderElement(this);
+- 生命周期
+	ConsumerStatefulElement 在unmount关闭监听关系
+	
+以person举例
+- 先新建一个继承 Notifier的类，包裹person，提供初始化和修改值的方法
+
+BuildlessNotifier._setElement 什么时候调用的
+	NotifierProviderElement.create
+
+scope = context //
+          .dependOnInheritedWidgetOfExactType<UncontrolledProviderScope>();
+ 中UncontrolledProviderScope 是在什么时候插入到Widget树上的
+ ProviderScope 通过build方法包裹的    
+          
+ Freezed or json_serializable
+
+
+假设你正在开发一个简单的待办事项（Todo）应用，页面中需要展示一组 Todo 列表项，用户可以：
+	•	查看待办事项列表
+	•	点击「添加按钮」弹出输入框添加新的事项
+	•	每一项右侧可以打勾（完成）或删除
+	•	页面上方可以切换「全部」「未完成」
+
+

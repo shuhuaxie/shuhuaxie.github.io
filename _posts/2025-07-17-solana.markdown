@@ -1,0 +1,71 @@
+
+BONK
+
+Raydium
+
+Pump.fun
+
+关注一个solana项目，看看如何运营一个项目
+
+- 账户和程序
+
+	
+const address = new PublicKey("TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA");
+const accountInfo = await connection.getAccountInfo(address);
+
+0 - System Program
+
+1 - 用户账户
+	- 持有 SOL 并可以签署交易
+	- "owner": "11111111111111111111111111111111",
+2 - 程序账户
+		- "executable": true,
+	- 程序数据账户
+	- 虚拟币发行账户/Mint account 
+		const address = new PublicKey("E*v");
+		const mintData = await getMint(connection, address, "confirmed");
+
+3- 程序派生账户
+	- 用户虚拟币账户
+	
+01085199966  - 盈科律师事务所
+
+法律合规
+社区运营
+
+
+网站内容
+- 宣传思想 
+- 法律相关 
+- 发币计划
+
+上链计划
+类型	  审核方	资金流向	流动性	监管风险	      							典型平台
+ICO	无	直接至项目方	依赖后期上线	极高	   								项目官网
+IEO	交易所	交易所托管再释放	即时上市	中								Binance Launchpad
+IDO	无（智能合约）	流动性池自动分配	即时但可能滑点	低	Uniswap、Raydium
+
+1. Uniswap (以太坊 & 多链)
+链支持：以太坊、Arbitrum、Optimism、Polygon等
+
+特点：
+
+全球最大DEX，采用AMM（自动做市商）模式，支持任意ERC-20代币交易
+
+V3版本提供「集中流动性」功能，提升资本效率
+
+无许可上币，完全去中心化治理
+
+优势：高流动性、用户基数庞大
+
+官网：uniswap.org
+
+
+
+    
+律所
+
+Web3.0区块链项目出海法律白皮书- 曼昆
+
+
+

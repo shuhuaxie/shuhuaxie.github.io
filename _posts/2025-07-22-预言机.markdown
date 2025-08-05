@@ -1,0 +1,8 @@
+预言机					更新速度		数据源		主要链
+Pyth						秒级				机构级		Solana, EVM, Move
+Chainlink				分钟级			多来源		全链
+Band Protocol		低频				众包			Cosmos, EVM
+
+
+
+

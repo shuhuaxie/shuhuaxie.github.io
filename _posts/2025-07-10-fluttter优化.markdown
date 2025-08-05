@@ -1,0 +1,28 @@
+flutter性能优化
+
+ 一、UI 构建与布局优化
+ - 使用 const 构造函数：如 const Text('Hello')
+ - 使用 RepaintBoundary （频繁变化的组件用 RepaintBoundary 包裹）
+ 二、列表与滚动优化
+ - ‌懒加载列表 
+ 	ListView.builder
+ 	分帧渲染复杂子项，避免单帧耗时过长（骨架和占位渲染）
+ - 状态缓存 AutomaticKeepAliveClientMixin保持状态
+ 
+ 
+Menu.storyboard
+MenuViewControllerFactory
+PopupAddNoteViewController
+
+
+
+
+
+
+    
+
+
+
+
+
+

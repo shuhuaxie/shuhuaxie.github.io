@@ -1,0 +1,8 @@
+- packages/keyring-controller-src/KeyringController.ts
+- unlockKeyrings
+	- packages/seedless-onboarding-controller/tests
+	- src/index.ts
+		- encryptWithDetail
+	
+	
+	
