@@ -27,7 +27,23 @@
   	- app/scripts/background.js
   		- browser.runtime.onConnect.addListener
   	- app/scripts/metamask-controller.js
+  		- submitPassword
+  		- encryptor: opts.encryptor || encryptorFactory(600_000),
+	- app/scripts/lib/encryptor-factorys
   	- core | packages/keyring-controller/src/KeyringController.ts - submitPassword
+  		- #unlockKeyrings
+  		- const result = await this.#encryptor.decryptWithDetail(
+            password,
+            encryptedVault,
+          );
+     - Browser-passworder 
+     	- const vault = await decrypt(password, text, key);
+     	- 系统decrypt算法
+     	- const result = await crypto.subtle.decrypt(
+     		 { name: DERIVED_KEY_FORMAT, iv: vector },
+     		 	key,
+      			encryptedData,
+   			 );
 - 技术
 	- redux
 		- store
@@ -87,5 +103,27 @@
 	- 转账
 	- 签名
 	
+	- 钱包管理
+		- 创建钱包
+		- 增加账号
+		- 导入签名
+			- 账号发现
+		- 导入账号
+		- 密码登录钱包
+			- AES-GCM算法
+			- 解密数据
+	- 钱包业务
+		- 跨链查看余额
+		- 转账和签名
+	
+	示例
+	const keyring: KeyringObject = {
+      type: KeyringTypes.hd,
+      accounts: ['0x123abc', '0x456def', '0x7a8b9c'],
+      metadata: {
+        id: 'mock-id',
+        name: '',
+      },
+    };
 	
 	
