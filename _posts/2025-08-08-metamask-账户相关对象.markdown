@@ -1,0 +1,58 @@
+- 地址：
+	address: string
+	// isEthAddress  core: packages/keyring-controller/src/KeyringControllers
+- KeyringObject // 展示
+	- accounts: string[]
+	- type:string;
+	- metadata:KeyringMetadata
+		- id:string; // Keyring ID
+		- name:string;// Keyring name
+- EthKeyring	
+	- 
+- HdKeyring
+	- #wallets: HDKey[] = []; //钱包
+	- getAccounts // 遍历钱包 从publicKey中生成地址
+	- AppKeyAddress 根据Dapp生成的address
+	- addAccounts 根据第四层的HDKey添加账号
+	- generateRandomMnemonic 
+		生成随机数，生成mnemonic，生成root，生成第四层的HDKey
+	- #getWalletForAccount
+		根据账户（地址）找钱包（私钥）
+- HDKey Hierarchical Deterministic Key
+	- opt 只有 xpri或者xpub
+	- scure-bip3/index.ts/ HDKey
+	- privateKey
+	- publicKey
+	- privateExtendedKey 
+		- 0x00（首字节标记） + 32 字节私钥数据（共 33 字节）
+	- publicExtendedKey 
+		- 0x02 或 0x03 + 32 字节 x 坐标
+		- 当 y 坐标为偶数时，首字节为0x02；
+		- 当 y 坐标为奇数时，首字节为0x03。
+	- depth
+	- index
+	- chainCode
+	- fromMasterSeed // 种子生成master HDKey
+	- fromExtendedKey // 从扩展秘钥生成 HDKey
+	- derive
+		路径的 “相对性”：BIP-32 规范中，派生路径既可以是 “绝对路径”（从根密钥开始，如 m/44'/0'/0），
+		也可以是 “相对路径”（从任意密钥开始，如当前是子密钥时，m/1 表示 “以当前密钥为起点派生第 1 个子密钥”）。
+		代码中路径以 m 开头，仅表示 “以当前实例为起点”，而非 “必须是根密钥”。例如：
+		若当前是根密钥（depth: 0），m/44' 表示从根派生第 44 号强化子密钥（depth: 1）。
+		若当前是 depth: 1 的子密钥，m/0 表示从该子密钥再派生第 0 号子密钥（depth: 2）
+	- deriveChild
+	- sign（返回：r + s）
+	- verify
+- Keyring
+	- type
+	- getAccounts
+	- getAppKeyAddress
+	- signTransaction 
+		- 如何用很多个账号去sign？
+	- signMessage
+	- signEip7702Authorization
+	- signPersonalMessage
+	- signTypedData
+	- decryptMessage
+
+

@@ -28,6 +28,17 @@
   		- browser.runtime.onConnect.addListener
   	- app/scripts/metamask-controller.js
   		- submitPassword
+			- 最终恢复#keyrings内容
+		- #unlockKeyrings
+			- const result = await this.#encryptor.decryptWithDetail(
+			- vault = result.vault;
+		- #restoreSerializedKeyrings
+			- for (const serializedKeyring of serializedKeyrings) {
+		- #restoreKeyring
+			- this.#keyrings.push({
+				keyring,
+				metadata,
+			 });
   		- encryptor: opts.encryptor || encryptorFactory(600_000),
 	- app/scripts/lib/encryptor-factorys
   	- core | packages/keyring-controller/src/KeyringController.ts - submitPassword
@@ -94,10 +105,12 @@
 				- ui/index.js
 				- render(<Root store={store} />, opts.container)
 				- ui/pages/index.js
-				- Routes
-				- routes.container.js
-				- routes.component.js
-	
+				- routes
+				- routes.container.js // 属性连接
+				- routes.component.js // 路由列表
+	- container 属性连接
+	- component 实际内容
+
 	- CORS限制
 	- 显示余额
 	- 转账

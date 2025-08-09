@@ -1,0 +1,81 @@
+- 首次打开
+	- authenticated.component.js
+	- onboarding-flow.js 
+		Switch/Route
+			- 插件弹窗和普通网页是两个独立的 React 应用入口，需要分开配置路由和入口文件：
+			- OnboardingWelcome ONBOARDING_WELCOME_ROUTE
+			- <Route exact path="*" component={OnboardingFlowSwitch} />
+				- 状态变更直接执行Redirect逻辑
+			- setPageState={setWelcomePageState}
+			- <CreatePassword
+			- handleCreateNewAccount
+			- MetaMetricsComponent
+			- CreationSuccessful
+			- OnboardingPinExtension
+	- onboarding-flow-switch.js
+			- 状态管理
+				- store.ts import rootReducer from '../ducks';
+				- index.js metamask: metamaskReducer,
+				- ui/index.js startApp render(<Root store={store} />, opts.container),
+				- app/scripts/ui
+					start().catch(log.error);
+			  if (completedOnboarding) {
+				return <Redirect to={{ pathname: DEFAULT_ROUTE }} />;
+			}
+	- welcomeDescription
+	- welcome-banner.tsx
+		- const [showTermsOfUse, setShowTermsOfUse] = useState(false);
+			展示弹窗
+			- onAccept
+				- onAcceptTermsOfUse = useCallback	
+	- welcome.js
+		- setPageState(WelcomePageState.Login)
+		- {pageState === WelcomePageState.Login && (
+			`<WelcomeLogin onLogin={handleLogin} />
+			)}
+- onboarding-flow\welcome\welcome-login.tsx
+	- 让我们开始吧，创建新钱包 // welcomeToMetaMask
+	- onLogin // google / LOGIN_OPTION.NEW
+- create-password.js
+	- PasswordForm 密码输入框
+		- as="form" 表单中的按钮点击后，默认执行onSubmit
+	- createNewAccount
+- actions.ts
+	- createNewVaultAndSyncWithSocial
+- metamask-controller.js
+	- createNewVaultAndKeychain
+- core/KeyringController.ts
+	- createNewVaultAndKeychain
+		- KeyringTypes.hd // 'HD Key Tree'
+	- const keyring = (await this.#newKeyring(type, opts)) as EthKeyring;
+		- const keyringBuilder = this.#getKeyringBuilderForType(type);
+		- keyring.init();
+		- keyring.generateRandomMnemonic(); // 根
+		- keyring.addAccounts(1); // 创建一个账户
+		- 为什么会有一个Solana Account？
+	- this.#keyringBuilders = keyringBuilders
+		? keyringBuilders.concat(defaultKeyringBuilders)
+		 : defaultKeyringBuilders;
+	- SimpleKeyring / HdKeyring
+	- readonly #keyringBuilders: { (): EthKeyring; type: string }[];
+	- const hdKeyring = hdKeyringBuilder();
+- accounts: simple-keyring.ts
+	const TYPE = 'Simple Key Pair';
+- accounts: hd-keyring.ts
+	const type = 'HD Key Tree';
+- accounts: EthKeyring.ts
+	在Keyring基础上扩展了3个可选方法
+- metametrics.js
+	- 请帮助我们改进 MetaMask / onboardingMetametricsTitle
+- creation-successful.js
+	- 您的钱包已准备就绪 / yourWalletIsReady
+- pin-extension.js
+	- 在您的浏览器上固定 MetaMask，以便访问并轻松查看交易确认。
+	- completedOnboarding 跳转到首页
+- routes.components.js
+	<Authenticated path={DEFAULT_ROUTE} component={Home} />
+- ui/pages/home/index.js
+- home.container.js
+- home.component.js
+	- 没有找到连接按钮，如何理解
+		如要连接网站，请选择“连接”按钮。MetaMask 仅支持连接 Web3 网站。
