@@ -10,3 +10,81 @@
 					- inputValue 资产金额
 			- ButtonIcon
 				隐私按钮，点击后内容变成*号
+	- 获取余额逻辑
+		- TokenBalancesController #balanceFetchers
+			- AccountsApiBalanceFetcher
+				- 
+			- RpcBalanceFetcher
+
+- https://github.com/MetaMask/core/blob/main/packages/assets-controllers/src/multicall.ts
+	- 区块链多合约调用（Multicall）功能
+- 查询余额core-main
+	- 调用区块链RPC 请求eth_call
+	- 执行链上聚合合约0xcA11bde05977b3631167028862bE2a173976CA11，aggregate 、getEthBalance
+	- 执行Call[] calldata calls // call.target.call(call.callData);
+		- struct Call {
+        	address target;
+        	bytes callData;
+    		}
+    - calldata  [SupportedTokenDetectionNetworks.mainnet]: '0xb1f8e55c7f64d203c1400b9d8555d050f94adf39',
+    	for(uint i = 0; i < users.length; i++) {
+    		for (uint j = 0; j < tokens.length; j++) {
+    	if (tokens[j] != address(0x0)) { 
+          addrBalances[addrIdx] = tokenBalance(users[i], tokens[j]);
+        } else {
+          addrBalances[addrIdx] = users[i].balance; // ETH balance    
+        }
+    - multicall3
+    	- toke
+    	allCalls.push({
+            target: tokenAddress,
+            allowFailure: true,
+            callData: tempERC20Contract.interface.encodeFunctionData(
+              BALANCE_OF_FUNCTION,
+              [group.accountAddress],
+            ),
+          });
+        - 原生
+    	allCalls.push({
+          target: multicall3Address,
+          allowFailure: true,
+          callData: multicall3TempContract.interface.encodeFunctionData(
+            GET_ETH_BALANCE_FUNCTION,
+            [userAddress],
+          ),
+        });
+	- 传递参数格式
+    		
+- 转账
+	TransactionController
+		  async #publishTransaction(
+		    ethQuery: EthQuery,
+		    transactionMeta: TransactionMeta,
+		    { skipSubmitHistory }: { skipSubmitHistory?: boolean } = {},
+		  ): Promise<string> {
+		    const transactionHash = await query(ethQuery, 'sendRawTransaction', [
+		      transactionMeta.rawTx,
+		    ]);
+
+		    if (skipSubmitHistory !== true) {
+		      this.#updateSubmitHistory(transactionMeta, transactionHash);
+		    }
+
+		    return transactionHash;
+		  }
+	创建RPC通讯Client #createAutoManagedNetworkClientRegistry()
+- 签名 并执行交易
+	- Web3Provider
+		@ethersproject/providers
+	- NetworkClient
+
+
+
+
+
+
+
+
+
+
+

@@ -1,12 +1,32 @@
-- account-overview-eth.tsx
-	- AccountOverviewLayout
-		- Carousel
-		- AccountOverviewTabs
-	- EthOverview
-		- CoinOverview
-			- UserPreferencedCurrencyDisplay
-				- $0.00 USD currency-display.component.js
-					- conversionRate 转换比例
-					- inputValue 资产金额
-			- ButtonIcon
-				隐私按钮，点击后内容变成*号
+- 账号管理
+	- 创建、导入、密码登录
+	- BIP协议
+		- 32 
+			- 分层确定秘钥管理架构
+				描述了从种子 ->master key -> key tree 的过程
+			- 普通派生，强化派生
+				HMAC-SHA512算法
+			- 隐含私钥生成公钥
+				sec p256 k1 私钥生成公钥算法
+		- 39 
+			- 补充了从随机数-> 助记词 -> 种子的过程
+				PBKDF2 - HMAC-SHA512
+		- 44
+			- 细化了树为5层，3层强化扩展，2层普通扩展
+			- 5层的含义，第二层coin_type汇总
+			- 账户发现规则（是否存在交易）
+	- 落地实践
+		- hdkeyring，hdkey
+		- 涉及三方库
+- 资金管理
+	- balance查询
+	- 交易
+	- 签名
+
+	- Json-RPC协议
+	- 落地实践
+		- 涉及三方库 Provider
+
+
+
+
