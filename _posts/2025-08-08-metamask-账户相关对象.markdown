@@ -10,6 +10,7 @@
 - EthKeyring	
 	- 
 - HdKeyring
+	- root 第四层
 	- #wallets: HDKey[] = []; //钱包
 	- getAccounts // 遍历钱包 从publicKey中生成地址
 	- AppKeyAddress 根据Dapp生成的address

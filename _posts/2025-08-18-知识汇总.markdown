@@ -1,4 +1,5 @@
 - 账号管理
+
 	- 创建、导入、密码登录
 	- BIP协议
 		- 32 
@@ -29,4 +30,21 @@
 
 
 
+
+
+	- 账号创建、账号添加、密码登录
+	- bip
+		- Bip32、Bip39、Bip44
+	- 落地实践
+		- HDKeyring HDKey
+	- 三方SDK
+- 资产管理
+	- 查询余额、交易、签名
+	- JSON-RPC
+	- Provider
+		- DAPP
+	- 三方SDK
+
+
+您好，我对钱包业务比较熟悉，熟悉Metamask源码
 
