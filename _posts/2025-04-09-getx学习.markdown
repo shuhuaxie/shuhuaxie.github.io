@@ -47,6 +47,7 @@
 三 Get.dialog
 	灵活
 		无需Context
+		GetMaterialApp会自动将应用的根上下文注册到 GetX 的导航管理器中
 	简洁
 		自动绑定页面生命周期‌
 四 .tr
@@ -56,8 +57,13 @@
 
 
 
-
-
+动画 - 复杂界面
+- 减少不必要的重建 Build
+- 使用const
+- 检查图片大小
+- 使用 ListView.builder
+RepaintBoundary ：
+https://www.bilibili.com/video/BV1YV4y1c7Ds/?spm_id_from=333.337.search-card.all.click&vd_source=926ae13e3077824520b5e157b98a47ae
 
 
 

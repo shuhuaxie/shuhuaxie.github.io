@@ -1,0 +1,8 @@
+- Getx路由
+	- GetX 天生支持 Android 风格 URL 路由
+		/home?id=123&name=flutter
+	后端接口、Web 地址、Flutter 地址、Android 路由 长得一样
+	- 使用DeepLinkService 处理 Deep Link
+	- auto_route 插件：自动生成路由配置
+- GetStorage
+	- 对底层存储方式进行封装
